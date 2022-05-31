@@ -1,0 +1,11 @@
+site_name: Stat 614 - Data Analysis Using Statistical Software
+theme: 
+  name: material
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+plugins:
+  - search
+nav:
+  - Syllabus: index.md
