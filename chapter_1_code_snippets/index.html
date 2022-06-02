@@ -1,0 +1,710 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>01 - Chapter 1 - Stat 614 - Data Analysis Using Statistical Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#getting-started" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-header__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stat 614 - Data Analysis Using Statistical Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 - Chapter 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-nav__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stat 614 - Data Analysis Using Statistical Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro_to_r/" class="md-nav__link">
+        00 - Intro to R
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          01 - Chapter 1
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        01 - Chapter 1
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-r-help-system" class="md-nav__link">
+    The R Help System
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-and-matrices" class="md-nav__link">
+    Vectors and Matrices
+  </a>
+  
+    <nav class="md-nav" aria-label="Vectors and Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-frames" class="md-nav__link">
+    Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching-a-data-frame" class="md-nav__link">
+    Attaching a data frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatterplots-and-correlations" class="md-nav__link">
+    Scatterplots and correlations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    Getting Started
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-r-help-system" class="md-nav__link">
+    The R Help System
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vectors-and-matrices" class="md-nav__link">
+    Vectors and Matrices
+  </a>
+  
+    <nav class="md-nav" aria-label="Vectors and Matrices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#data-frames" class="md-nav__link">
+    Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#attaching-a-data-frame" class="md-nav__link">
+    Attaching a data frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scatterplots-and-correlations" class="md-nav__link">
+    Scatterplots and correlations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+  <h1>01 - Chapter 1</h1>
+
+<p>This is only a temporary page.
+I post the code snippets so that you don't have to type during the lecture.
+Simply copy and paste the code below to RStudio.
+In a few days, I'll add comments and turn this notebook to a proper webpage that contains the explanations, as well.</p>
+<h2 id="getting-started">Getting Started</h2>
+<pre><code class="language-R"># example 1
+temps = c(51.9, 51.8, 51.9, 53)
+(5/9) * (temps - 32)
+CT = c(48, 48.2, 48, 48.7)
+temps - CT
+</code></pre>
+<pre><code class="language-R"># example 2
+winner = c(185, 182, 182, 188, 188, 188, 185, 185, 177, 182, 182, 193, 183, 179, 179, 175)
+opponent = c(175, 193, 185, 187, 188, 173, 180, 177, 183, 185, 180, 180, 182, 178, 178, 173)
+
+length(winner)
+
+year = seq(from=2008, to=1948, by=-4)
+
+winner[4] = 189
+
+winner[5] = 189
+
+winner[4:5] = 189
+
+mean(winner)
+
+mean(opponent)
+
+difference = winner - opponent
+
+data.frame(year, winner, opponent, difference)
+
+taller.won = winner &gt; opponent
+
+table(taller.won)
+
+table(taller.won) / 16 * 100
+
+barplot(rev(difference), xlab=&quot;Election years 1948 to 2008&quot;, ylab=&quot;Height difference in cm&quot;)
+</code></pre>
+<pre><code class="language-R"># example 3
+
+k = c(0, 1, 2, 3, 4)
+x = c(109, 65, 22, 3, 1)
+barplot(x, names.arg=k, ylab=&quot;Frequencies&quot;, xlab = 'Number of deaths', main = 'Frequency distribution')
+
+p = x / sum(x)
+barplot(p, names.arg=k, ylab='Relative Frequencies', xlab = 'Number of deaths', main = 'Relative Freq Distr')
+
+r = sum(p * k)
+v = sum(x * (k - r)^2) / 199
+
+f = r^k * exp(- r) / factorial(k)
+f = dpois(k, r)
+floor(200*f)
+x
+cbind(k, p, f)
+</code></pre>
+<pre><code class="language-R"># Prussian horsekick data
+k = c(0, 1, 2, 3, 4)
+x = c(109, 65, 22, 3, 1)
+p = x / sum(x) #relative frequencies
+print(p)
+r = sum(k * p) #mean
+v = sum(x * (k - r)^2) / 199 #variance
+print(r)
+print(v)
+f = dpois(k, r)
+print(cbind(k, p, f))
+</code></pre>
+<pre><code class="language-R">getwd()
+setwd(&quot;/Users/boraferlengez/Dropbox/teaching/hunter college/stat614.01/lecture_notes&quot;)
+getwd()
+</code></pre>
+<pre><code class="language-R">y = rpois(200, lambda=.61)
+kicks = table(y) #table of sample frequencies
+kicks
+Theoretical = dpois(0:3, lambda=.61)
+Sample = kicks / 200
+cbind(Theoretical, Sample)
+mean(y)
+var(y)
+</code></pre>
+<h3 id="the-r-help-system">The R Help System</h3>
+<pre><code class="language-R">?barplot
+</code></pre>
+<pre><code class="language-R">help(barplot)
+</code></pre>
+<pre><code class="language-R">??dpois
+</code></pre>
+<pre><code class="language-R">help.search(&quot;dpois&quot;)
+</code></pre>
+<pre><code class="language-R">example(mean)
+</code></pre>
+<pre><code class="language-R">?mean
+</code></pre>
+<h2 id="functions">Functions</h2>
+<pre><code class="language-R"># defining the function
+var.n = function(x){
+    v = var(x)
+    n = NROW(x)
+    v * (n - 1) / n
+}
+
+# using the function 
+temps = c(51.9, 51.8, 51.9, 53)
+var(temps)
+var.n(temps)
+</code></pre>
+<pre><code class="language-R"># if the definition is one line { } are not needed.
+f = function(x, a=1, b=1)
+    x^(a-1) * (1-x)^(b-1)
+</code></pre>
+<pre><code class="language-R">curve(f(x,2,5), from=0, to=1)
+</code></pre>
+<h2 id="vectors-and-matrices">Vectors and Matrices</h2>
+<pre><code class="language-R"># creating a matrix from given data
+probs = c(.45, .05, .01, .48, .70, .50, .07, .25, .49)
+P = matrix(probs, nrow=3, ncol=3)
+P
+# naming rows and columns
+rownames(P) &lt;- c(&quot;lower_old&quot;, &quot;middle_old&quot;, &quot;upper_old&quot;)
+colnames(P) &lt;- c(&quot;lower_new&quot;, &quot;middle_new&quot;, &quot;upper_new&quot;)
+P
+
+rowSums(P)
+
+colSums(P)
+
+P[1, 3]
+
+P[1, ]
+
+P[,2]
+</code></pre>
+<pre><code class="language-R">Q = matrix(c( 0.45, 0.48, 0.07,
+              0.05, 0.70, 0.25,
+              0.01, 0.50, 0.49), nrow=3, ncol=3, byrow=TRUE)
+Q
+</code></pre>
+<h3 id="data-frames">Data Frames</h3>
+<pre><code class="language-R"># displaying all data
+
+USArrests
+</code></pre>
+<pre><code class="language-R"># sometimes there is too much data to display,
+# in those cases, displaying few top or bottom rows
+# is a good idea to see what kind of data we have
+
+head(USArrests)
+
+head(USArrests, 14)
+
+tail(USArrests)
+</code></pre>
+<pre><code class="language-R">## size/summary of data
+
+# number of observations, i.e. number of rows
+NROW(USArrests)
+
+# size of the data
+dim(USArrests)
+
+# column names
+names(USArrests)
+
+rownames(USArrests) # lists row names
+colnames(USArrests) # lists column names
+dimnames(USArrests) # lists both row and column names
+
+#structure of the data
+str(USArrests) # str short for structure
+</code></pre>
+<pre><code class="language-R"># if you prefer to work with matrices:
+
+arrests = as.matrix(USArrests)
+str(arrests)
+</code></pre>
+<pre><code class="language-R">summary(USArrests)
+</code></pre>
+<pre><code class="language-R"># extracting data
+USArrests[&quot;California&quot;, &quot;Murder&quot;]
+
+USArrests[&quot;California&quot;, ]
+
+USArrests[, &quot;Murder&quot;]
+
+USArrests$Murder
+</code></pre>
+<pre><code class="language-R"># to create a frequency histogram
+
+hist(USArrests[, &quot;Murder&quot;])
+hist(USArrests$Murder)
+</code></pre>
+<pre><code class="language-R"># to create a probability (relative frequency) histogram
+
+library(MASS)
+truehist(USArrests$Murder)
+</code></pre>
+<pre><code class="language-R">hist(USArrests$Murder, prob=TRUE, breaks=&quot;scott&quot;)
+</code></pre>
+<pre><code class="language-R">USArrests$Murder
+</code></pre>
+<h3 id="attaching-a-data-frame">Attaching a data frame</h3>
+<pre><code class="language-R"># to save time, sometimes we attach a data frame so that we can use the 
+# row/column names directly without the need of slicing or $ sign.
+attach(USArrests)
+
+# then we can call Murder instead of USArrests$Murder
+murder.pct = 100 * Murder / (Murder + Assault + Rape)
+
+# to detach
+detach(USArrests)
+</code></pre>
+<h3 id="scatterplots-and-correlations">Scatterplots and correlations</h3>
+<pre><code class="language-R">attach(USArrests)
+plot(UrbanPop, Murder)
+</code></pre>
+<pre><code class="language-R">pairs(USArrests)
+</code></pre>
+<pre><code class="language-R">cor(UrbanPop, Murder)
+</code></pre>
+<pre><code class="language-R">cor(USArrests)
+</code></pre>
+<h2 id="importing-data">Importing Data</h2>
+<p>http://www.r-tutor.com/r-introduction/data-frame/data-import</p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../intro_to_r/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 00 - Intro to R" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              00 - Intro to R
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
