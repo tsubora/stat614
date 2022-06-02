@@ -9,3 +9,4 @@ plugins:
   - search
 nav:
   - Syllabus: index.md
+  - 01 - Intro to `R`: intro_to_r.md 

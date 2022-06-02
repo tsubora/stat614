@@ -1,17 +1,17 @@
-# Welcome to MkDocs
+# Welcome to Stat 614.01 - Data Analysis Using Statistical Software
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Course Information
 
-## Commands
+**Class time:** MoTuWeTh 5:45 - 7:20pm
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+**Classroom:**  Hunter North 305
 
-## Project layout
+**Instructor:** Bora Ferlengez  
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+Best way to reach to me is shooting a message in our Telegram chat (stats/software related comments/questions) or send a private message (personal issues) on Telegram. But if you want to send an email: bora.ferlengez@gmail.com
+
+**Office hours**: MoTuWeTh 5:00 - 5:30pm (HE924), or after class, or by appointment.
+
+**Textbook:** R by Example, by Jim Albert and Maria Rizzo. 2012. Free download from the Hunter College library website. ISBN: 978-1-4614-1364-6.
+
+**Reference Textbook:** Introduction to Statistics and Data Analysis, Peck, Olsen and Devore, 5th edition. ISBN:978-1-305-11534-7.

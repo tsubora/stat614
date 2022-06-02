@@ -1,0 +1,1417 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>01 - Intro to `R` - Stat 614 - Data Analysis Using Statistical Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lecture-1-preliminaries" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-header__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stat 614 - Data Analysis Using Statistical Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              01 - Intro to `R`
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-nav__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stat 614 - Data Analysis Using Statistical Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          01 - Intro to `R`
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        01 - Intro to `R`
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r-and-rstudio" class="md-nav__link">
+    R and RStudio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-r-and-rstudio" class="md-nav__link">
+    How to install R and RStudio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-calculations-in-r" class="md-nav__link">
+    Basic calculations in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-types-in-r" class="md-nav__link">
+    Basic Data Types in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-structures-in-r" class="md-nav__link">
+    Basic Data Structures in R
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Data Structures in R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-add-a-new-element" class="md-nav__link">
+    How to add a new element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-vectors-from-a-sequence-of-numbers" class="md-nav__link">
+    How to create vectors from a sequence of numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-frames" class="md-nav__link">
+    Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    Matrices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    Indexing
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-using-boolean-values" class="md-nav__link">
+    Filtering using Boolean values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slicingindexing-data-frames" class="md-nav__link">
+    Slicing/indexing data frames
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#r-and-rstudio" class="md-nav__link">
+    R and RStudio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-install-r-and-rstudio" class="md-nav__link">
+    How to install R and RStudio
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-calculations-in-r" class="md-nav__link">
+    Basic calculations in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-types-in-r" class="md-nav__link">
+    Basic Data Types in R
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-data-structures-in-r" class="md-nav__link">
+    Basic Data Structures in R
+  </a>
+  
+    <nav class="md-nav" aria-label="Basic Data Structures in R">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-add-a-new-element" class="md-nav__link">
+    How to add a new element
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-to-create-vectors-from-a-sequence-of-numbers" class="md-nav__link">
+    How to create vectors from a sequence of numbers
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#factors" class="md-nav__link">
+    Factors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lists" class="md-nav__link">
+    Lists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-frames" class="md-nav__link">
+    Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matrices" class="md-nav__link">
+    Matrices
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexing" class="md-nav__link">
+    Indexing
+  </a>
+  
+    <nav class="md-nav" aria-label="Indexing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-using-boolean-values" class="md-nav__link">
+    Filtering using Boolean values
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#slicingindexing-data-frames" class="md-nav__link">
+    Slicing/indexing data frames
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#packages" class="md-nav__link">
+    Packages
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="lecture-1-preliminaries">Lecture 1: Preliminaries</h1>
+<h2 id="r-and-rstudio">R and RStudio</h2>
+<p><code>R</code> is a statistical computing environment:</p>
+<ul>
+<li>open source and free software for statistical computation and graphics and</li>
+<li>a computer language designed for typical statistical and graphical applications</li>
+</ul>
+<p><code>R</code> is an interpreted language:
+You type some commands (via at terminal/command prompt or from a file called a script), and R processes those commands.</p>
+<p>In this course, we will use <code>RStudio</code> to interact with <code>R</code>. <code>RStudio</code> is an integrated development environment, in other words user friendly software to interact with a language.</p>
+<h2 id="how-to-install-r-and-rstudio">How to install <code>R</code> and <code>RStudio</code></h2>
+<p>You can install <code>R</code> from:<br />
+<a href="">https://cran.r-project.org/ </a></p>
+<p>You can install <code>RStudio</code> from:<br />
+<a href="">https://www.rstudio.com/products/rstudio/download/</a></p>
+<p>Here's a webpage that explains the installation process in steps for different operating systems:<br />
+<a href="">https://techvidvan.com/tutorials/install-r/</a></p>
+<p>Here's a Youtube tutorial for MacOS:<br />
+<a href="">https://www.youtube.com/watch?v=LanBozXJjOk&amp;ab_channel=TomHenry-datasciencewithR</a></p>
+<p>Here's a Youtube tutorial for Windows:<br />
+<a href="">https://www.youtube.com/watch?v=TFGYlKvQEQ4&amp;ab_channel=RProgramming-DDS</a></p>
+<h2 id="basic-calculations-in-r">Basic calculations in <code>R</code></h2>
+<p>You can use <code>R</code> as a calculator and let it process a one line operation:</p>
+<pre><code class="language-R">1+2
+</code></pre>
+<p>3</p>
+<p>Here's a tidy website that contains a list of useful operators:
+https://www.learnbyexample.org/r-operators/</p>
+<p>In this course, we'll be doing more complex computations and we'll need to save the result of a computation to be used later in some other computation. For that reason, we have <em>variables</em>. You can think of a variable as a keyword you chose to store a particular piece of information (numerical, or text or even logical).  </p>
+<p>In <code>R</code>, there are two ways to assign a value to a variable:<br />
+using <code>=</code> and using <code>&lt;-</code></p>
+<p>First you type the name of the variable you chose, then you type <code>=</code> or <code>&lt;-</code> and then you put what value you want to assign to that variable. That value can be the result of some calculation, can be the output of some function, it can be a number or text or logical value you want to store.</p>
+<pre><code class="language-R"># note that, when you make an assignment, you don't get an output. 
+# if you're using RStudio, the variable and its value can be seen in the Environment pane
+a = 3 ^ 2 #(example: exponentiation)
+</code></pre>
+<pre><code class="language-R"># if you want R to return the value of a variable to the console, you'll need to type the name
+a
+</code></pre>
+<p>9</p>
+<pre><code class="language-R">b &lt;- 8 %/% 3 #(example: integer division)
+</code></pre>
+<pre><code class="language-R">b
+</code></pre>
+<p>2</p>
+<pre><code class="language-R"># you can see the variables in RStudio in a nice, organized way in the Environment pane
+# but if you want to see a list of variables in the Console:
+ls()
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'b'</li></ol>
+
+<p>Note that <code>R</code> is case sensitive, for example <code>a</code> and <code>A</code> are treated as different variable names. </p>
+<pre><code class="language-R">A = 7
+</code></pre>
+<pre><code class="language-R">a
+</code></pre>
+<p>9</p>
+<pre><code class="language-R">A
+</code></pre>
+<p>7</p>
+<p>If you want to update the value of a variable, you can do that of course.</p>
+<pre><code class="language-R">A = 10
+</code></pre>
+<pre><code class="language-R"># now the value of A is not 7 anymore, but 10.
+A
+</code></pre>
+<p>10</p>
+<h2 id="basic-data-types-in-r">Basic Data Types in <code>R</code></h2>
+<p>Here's a nice reference for more on basic data types and data structures in <code>R</code>:  </p>
+<p>https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/#:~:text=R's%20basic%20data%20types%20are,%2C%20data%20frame%2C%20and%20factors</p>
+<p>There are 6 data types in <code>R</code>:</p>
+<ul>
+<li>character</li>
+<li>numeric (real or decimal)</li>
+<li>integer</li>
+<li>logical</li>
+<li>complex</li>
+</ul>
+<p>You can find out the type of an object using the <code>typeof()</code> function. We'll discuss functions below, but basically they are self-contained algorithms built to perform a specific task. A function expects a user to give arguments as input and based on the values of the arguments, a function produces an output.</p>
+<pre><code class="language-R"># character values are anything that is to be treated as text
+typeof(&quot;ab&quot;)
+</code></pre>
+<p>'character'</p>
+<p>In the example above, we gave <code>"ab"</code> as the input to the function <code>typeof()</code> by typing <code>"ab"</code> between the parentheses, and the <code>typeof()</code> function returned us the type of <code>"ab"</code> as the output.</p>
+<pre><code class="language-R"># R will decide how to store the value unless you specify the data type manually
+typeof(2)
+</code></pre>
+<p>'double'</p>
+<p>(If you wonder why the word 'double', double just means a decimal number in double precision, i.e. two decimals after the decimal point.)</p>
+<pre><code class="language-R"># by using '' or &quot;&quot;, we can tell R that we're using a characters
+typeof('2')
+</code></pre>
+<p>'character'</p>
+<p>You can store text in a variable as well. To store a text value, you'll need to use <code>"</code> or <code>'</code>. Otherwise, <code>R</code> thinks you're typing the name of a variable.</p>
+<pre><code class="language-R"># note the the ' signs between the &quot; signs are treated as apostrophes:
+mytext &lt;- &quot;I'm having a great 'day' today.&quot;
+mytext
+</code></pre>
+<p>'I\'m having a great \'day\' today.'</p>
+<p>The backslash before the apostrophe <code>\'</code> is <code>R</code>'s way of remembering that <code>'</code> sign is to be treated as an apostrophe, but not as a delimiter of some text data.  </p>
+<pre><code class="language-R"># the backslashes above are to denote escape sequences
+# \' tells R to treat the apostrophe as a character
+# to print nicely, you can use the cat() function
+cat(mytext)
+</code></pre>
+<pre><code>I'm having a great 'day' today.
+</code></pre>
+<pre><code class="language-R">typeof(2L) # the L on the right tells R to store 2 as an integer
+</code></pre>
+<p>'integer'</p>
+<pre><code class="language-R">typeof(-12.4)
+</code></pre>
+<p>'double'</p>
+<pre><code class="language-R">typeof(T)
+</code></pre>
+<p>'logical'</p>
+<pre><code class="language-R">typeof(FALSE)
+</code></pre>
+<p>'logical'</p>
+<pre><code class="language-R">typeof(1+4i)
+</code></pre>
+<p>'complex'</p>
+<h2 id="basic-data-structures-in-r">Basic Data Structures in <code>R</code></h2>
+<p>Data structures are ways to store (usually multiple) values together in a specific way.<br />
+<code>R</code> has multiple data structures.<br />
+The most important ones for us include:  </p>
+<ul>
+<li>atomic vector</li>
+<li>list</li>
+<li>matrix</li>
+<li>data frame</li>
+<li>factors</li>
+</ul>
+<pre><code class="language-R"># you can think of vectors as lists/arrays 
+# that contain items of the same type
+# the function c() below combines items to create vectors
+vec1 &lt;- c(1,2,3,20,3)
+vec2 &lt;- c(T,T,F,F,FALSE, TRUE)
+vec3 &lt;- c('a','stats', '614', &quot;\'&quot;)
+vec4 &lt;- c(2L, -5L)
+vec5 &lt;- 1:10
+</code></pre>
+<pre><code class="language-R">length(vec1)
+</code></pre>
+<p>5</p>
+<pre><code class="language-R">typeof(vec2)
+</code></pre>
+<p>'logical'</p>
+<pre><code class="language-R">typeof(vec3)
+</code></pre>
+<p>'character'</p>
+<pre><code class="language-R">cat(vec4)
+</code></pre>
+<pre><code>2 -5
+</code></pre>
+<pre><code class="language-R">2*vec4
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>4</li><li>-10</li></ol>
+
+<pre><code class="language-R">vec5
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
+
+<pre><code class="language-R">vec6 &lt;- vec5 - vec5
+vec6
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></ol>
+
+<pre><code class="language-R">vec4 + vec6
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li></ol>
+
+<pre><code class="language-R">vec7 &lt;- c(1,2,3)
+typeof(vec7)
+</code></pre>
+<p>'double'</p>
+<pre><code class="language-R">vec8 &lt;- c(1L,2L,3L)
+typeof(vec8)
+</code></pre>
+<p>'integer'</p>
+<pre><code class="language-R">vec7 == vec8
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
+
+<pre><code class="language-R"># rdocumentation.org/packages/utils/versions/3.6.2/topics/str
+str(vec8)
+</code></pre>
+<pre><code> int [1:3] 1 2 3
+</code></pre>
+<h3 id="how-to-add-a-new-element">How to add a new element</h3>
+<pre><code class="language-R">vec9 &lt;- c(vec8,4L)
+vec9
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+
+<pre><code class="language-R">vec10 &lt;- c(0L,vec9)
+vec10
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ol>
+
+<h3 id="how-to-create-vectors-from-a-sequence-of-numbers">How to create vectors from a sequence of numbers</h3>
+<pre><code class="language-R">vec11 &lt;- 1:10
+vec11
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
+
+<pre><code class="language-R">vec12 &lt;- seq(from = 1, to = 2, by = 0.1)
+vec12
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>1.1</li><li>1.2</li><li>1.3</li><li>1.4</li><li>1.5</li><li>1.6</li><li>1.7</li><li>1.8</li><li>1.9</li><li>2</li></ol>
+
+<pre><code class="language-R">vec12 &lt;- seq(from = 1, to = 20)
+vec12
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li></ol>
+
+<h3 id="factors">Factors</h3>
+<p>Factors are categorical variables in <code>R</code></p>
+<pre><code class="language-R">vec13 = as.factor(c(&quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;))
+vec13
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>Male</li><li>Female</li><li>Male</li><li>Female</li></ol>
+
+<details>
+    <summary style=display:list-item;cursor:pointer>
+        <strong>Levels</strong>:
+    </summary>
+    <style>
+    .list-inline {list-style: none; margin:0; padding: 0}
+    .list-inline>li {display: inline-block}
+    .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+    </style>
+    <ol class=list-inline><li>'Female'</li><li>'Male'</li></ol>
+</details>
+
+<pre><code class="language-R"># note that R automatically decides what the underlying data type is when creating a vector
+# the items in a vector need to be of the same data type.
+vec14 = c(1,TRUE,'A')
+class(vec14)
+</code></pre>
+<p>'character'</p>
+<h3 id="lists">Lists</h3>
+<pre><code class="language-R"># what if we want to store items of different data types and keep the data types as they are?
+# we use lists
+mylist &lt;- list(1,TRUE,'A')
+mylist
+</code></pre>
+<ol>
+    <li>1</li>
+    <li>TRUE</li>
+    <li>'A'</li>
+</ol>
+
+<pre><code class="language-R">typeof(mylist)
+</code></pre>
+<p>'list'</p>
+<pre><code class="language-R">mylist2 &lt;- list(mylist, c(1,2,3))
+mylist2
+</code></pre>
+<ol>
+    <li><ol>
+    <li>1</li>
+    <li>TRUE</li>
+    <li>'A'</li>
+</ol>
+</li>
+    <li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
+</li>
+</ol>
+
+<pre><code class="language-R">mylist3 &lt;- c(mylist, c(1,2,3))
+mylist3
+</code></pre>
+<ol>
+    <li>1</li>
+    <li>TRUE</li>
+    <li>'A'</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ol>
+
+<h3 id="data-frames">Data Frames</h3>
+<p>You can think of <em>data frames</em> as lists of vectors of equal length. <br />
+Or even better, like a spreadsheet.</p>
+<pre><code class="language-R">data.frame(vec1,vec2,vec3)
+</code></pre>
+<pre><code>Error in data.frame(vec1, vec2, vec3): arguments imply differing number of rows: 5, 6, 4
+Traceback:
+
+
+1. data.frame(vec1, vec2, vec3)
+
+2. stop(gettextf("arguments imply differing number of rows: %s", 
+ .     paste(unique(nrows), collapse = ", ")), domain = NA)
+</code></pre>
+<pre><code class="language-R"># since those vectors were of different lengths, R couldn't create a data frame.
+cat(length(vec1),length(vec2),length(vec3))
+</code></pre>
+<pre><code>5 6 4
+</code></pre>
+<pre><code class="language-R">vec15 &lt;- c(vec1,-1)
+</code></pre>
+<pre><code class="language-R">vec16 &lt;- c('one', &quot;two&quot;, vec3)
+</code></pre>
+<pre><code class="language-R">cat(length(vec15),length(vec2),length(vec16))
+</code></pre>
+<pre><code>6 6 6
+</code></pre>
+<pre><code class="language-R">data.frame(vec15,vec2,vec16)
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 3</caption>
+<thead>
+    <tr><th scope=col>vec15</th><th scope=col>vec2</th><th scope=col>vec16</th></tr>
+    <tr><th scope=col><dbl></th><th scope=col><lgl></th><th scope=col><chr></th></tr>
+</thead>
+<tbody>
+    <tr><td> 1</td><td> TRUE</td><td>one  </td></tr>
+    <tr><td> 2</td><td> TRUE</td><td>two  </td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>a    </td></tr>
+    <tr><td>20</td><td>FALSE</td><td>stats</td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>614  </td></tr>
+    <tr><td>-1</td><td> TRUE</td><td>'    </td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">df &lt;- data.frame(a = vec15,b = vec2,c = vec16, d = vec2 + vec15)
+df
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+    <tr><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr>
+    <tr><th scope=col><dbl></th><th scope=col><lgl></th><th scope=col><chr></th><th scope=col><dbl></th></tr>
+</thead>
+<tbody>
+    <tr><td> 1</td><td> TRUE</td><td>one  </td><td> 2</td></tr>
+    <tr><td> 2</td><td> TRUE</td><td>two  </td><td> 3</td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>a    </td><td> 3</td></tr>
+    <tr><td>20</td><td>FALSE</td><td>stats</td><td>20</td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>614  </td><td> 3</td></tr>
+    <tr><td>-1</td><td> TRUE</td><td>'    </td><td> 0</td></tr>
+</tbody>
+</table>
+
+<h3 id="matrices">Matrices</h3>
+<pre><code class="language-R"># the matrix function creates a matrix below that contains 3 rows and 2 columns
+mymatrix = matrix(vec16, 3, 2)
+mymatrix
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 3 × 2 of type chr</caption>
+<tbody>
+    <tr><td>one</td><td>stats</td></tr>
+    <tr><td>two</td><td>614  </td></tr>
+    <tr><td>a  </td><td>'    </td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R"># finding the transpose matrix
+t(mymatrix)
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 2 × 3 of type chr</caption>
+<tbody>
+    <tr><td>one  </td><td>two</td><td>a</td></tr>
+    <tr><td>stats</td><td>614</td><td>'</td></tr>
+</tbody>
+</table>
+
+<h2 id="indexing">Indexing</h2>
+<pre><code class="language-R"># how to grab the second value of a vector
+vec3[2]
+</code></pre>
+<p>'stats'</p>
+<pre><code class="language-R">vec3
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
+
+<pre><code class="language-R">1:3 #means all the numbers between 1 and 3 (1 and 3 included)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
+
+<pre><code class="language-R"># what if we want more values
+vec3[1:3]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li></ol>
+
+<pre><code class="language-R">vec3[-1]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
+
+<h3 id="filtering-using-boolean-values">Filtering using Boolean values</h3>
+<pre><code class="language-R">length(vec3)
+</code></pre>
+<p>4</p>
+<pre><code class="language-R">vec3[c(T,T,F,T)]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'\''</li></ol>
+
+<pre><code class="language-R">vec3[c(1,2,4)]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'\''</li></ol>
+
+<pre><code class="language-R">vec3[5]
+</code></pre>
+<p>NA</p>
+<pre><code class="language-R"># similar with lists, but remember: you get sublists
+mylist
+</code></pre>
+<ol>
+    <li>1</li>
+    <li>TRUE</li>
+    <li>'A'</li>
+</ol>
+
+<pre><code class="language-R">mylist[1:2]
+</code></pre>
+<ol>
+    <li>1</li>
+    <li>TRUE</li>
+</ol>
+
+<pre><code class="language-R">mylist[1]
+</code></pre>
+<ol>
+    <li>1</li>
+</ol>
+
+<pre><code class="language-R">typeof(mylist[1])
+</code></pre>
+<p>'list'</p>
+<pre><code class="language-R"># to get the actual items
+mylist[[1]]
+</code></pre>
+<p>1</p>
+<pre><code class="language-R"># giving names to items
+mylist4 &lt;- list(&quot;a&quot; = vec1,
+               &quot;vec2&quot; = vec2,
+               namewithouthquotes = vec3,
+               mynumber = 20,
+               list(vec1, vec2, vec3), mean)
+</code></pre>
+<pre><code class="language-R">mylist4
+</code></pre>
+<dl>
+    <dt>$a</dt>
+        <dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
+</dd>
+    <dt>$vec2</dt>
+        <dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li></ol>
+</dd>
+    <dt>$namewithouthquotes</dt>
+        <dd><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
+</dd>
+    <dt>$mynumber</dt>
+        <dd>20</dd>
+    <dt>[[5]]</dt>
+        <dd><ol>
+    <li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
+</li>
+    <li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li></ol>
+</li>
+    <li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
+</li>
+</ol>
+</dd>
+    <dt>[[6]]</dt>
+        <dd><pre class=language-r><code>function (x, ...) 
+UseMethod("mean")</code></pre></dd>
+</dl>
+
+<pre><code class="language-R"># we gave names to items in the list
+names(mylist4)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>'a'</li><li>'vec2'</li><li>'namewithouthquotes'</li><li>'mynumber'</li><li>''</li><li>''</li></ol>
+
+<pre><code class="language-R">mylist4[1]
+</code></pre>
+<p><strong>$a</strong> = <style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline&gt;li {display: inline-block}
+.list-inline&gt;li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style></p>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
+
+<pre><code class="language-R">mylist4[&quot;a&quot;]
+</code></pre>
+<p><strong>$a</strong> = <style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline&gt;li {display: inline-block}
+.list-inline&gt;li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style></p>
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
+
+<h3 id="slicingindexing-data-frames">Slicing/indexing data frames</h3>
+<pre><code class="language-R">df
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+    <tr><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr>
+    <tr><th scope=col><dbl></th><th scope=col><lgl></th><th scope=col><chr></th><th scope=col><dbl></th></tr>
+</thead>
+<tbody>
+    <tr><td> 1</td><td> TRUE</td><td>one  </td><td> 2</td></tr>
+    <tr><td> 2</td><td> TRUE</td><td>two  </td><td> 3</td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>a    </td><td> 3</td></tr>
+    <tr><td>20</td><td>FALSE</td><td>stats</td><td>20</td></tr>
+    <tr><td> 3</td><td>FALSE</td><td>614  </td><td> 3</td></tr>
+    <tr><td>-1</td><td> TRUE</td><td>'    </td><td> 0</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">df$a
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
+
+<pre><code class="language-R">df[&quot;a&quot;]
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 1</caption>
+<thead>
+    <tr><th scope=col>a</th></tr>
+    <tr><th scope=col><dbl></th></tr>
+</thead>
+<tbody>
+    <tr><td> 1</td></tr>
+    <tr><td> 2</td></tr>
+    <tr><td> 3</td></tr>
+    <tr><td>20</td></tr>
+    <tr><td> 3</td></tr>
+    <tr><td>-1</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">df[[&quot;a&quot;]]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
+
+<pre><code class="language-R">df[[1]]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
+
+<pre><code class="language-R">df[1][4]
+</code></pre>
+<pre><code>Error in `[.data.frame`(df[1], 4): undefined columns selected
+Traceback:
+
+
+1. df[1][4]
+
+2. `[.data.frame`(df[1], 4)
+
+3. stop("undefined columns selected")
+</code></pre>
+<pre><code class="language-R"># 1st column 4th row
+df[[1]][4]
+</code></pre>
+<p>20</p>
+<pre><code class="language-R">df[[1]][4:6]
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+
+<ol class=list-inline><li>20</li><li>3</li><li>-1</li></ol>
+
+<pre><code class="language-R"># first row 4th column
+df[1,4]
+</code></pre>
+<p>2</p>
+<pre><code class="language-R">df[4,1]
+</code></pre>
+<p>20</p>
+<pre><code class="language-R">df[1,]
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 1 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr>
+    <tr><th></th><th scope=col><dbl></th><th scope=col><lgl></th><th scope=col><chr></th><th scope=col><dbl></th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>1</th><td>1</td><td>TRUE</td><td>one</td><td>2</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">df[c(1,2,4),]
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 3 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>a</th><th scope=col>b</th><th scope=col>c</th><th scope=col>d</th></tr>
+    <tr><th></th><th scope=col><dbl></th><th scope=col><lgl></th><th scope=col><chr></th><th scope=col><dbl></th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>1</th><td> 1</td><td> TRUE</td><td>one  </td><td> 2</td></tr>
+    <tr><th scope=row>2</th><td> 2</td><td> TRUE</td><td>two  </td><td> 3</td></tr>
+    <tr><th scope=row>4</th><td>20</td><td>FALSE</td><td>stats</td><td>20</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">mymatrix
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 3 × 2 of type chr</caption>
+<tbody>
+    <tr><td>one</td><td>stats</td></tr>
+    <tr><td>two</td><td>614  </td></tr>
+    <tr><td>a  </td><td>'    </td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R">mymatrix[1,2]
+</code></pre>
+<p>'stats'</p>
+<h2 id="functions">Functions</h2>
+<pre><code class="language-R">new_sum &lt;- function(value1, value2){
+    results &lt;- value1 + value2
+    return(results)
+}
+</code></pre>
+<pre><code class="language-R">new_sum(2,4)
+</code></pre>
+<p>6</p>
+<pre><code class="language-R">new_division &lt;- function(x,y){
+    return(y/x)
+}
+</code></pre>
+<pre><code class="language-R">new_division(5,4)
+</code></pre>
+<p>0.8</p>
+<pre><code class="language-R">new_division(y=4,x=5)
+</code></pre>
+<p>0.8</p>
+<pre><code class="language-R">new_division
+</code></pre>
+<pre class=language-r><code>function (x, y) 
+{
+<span style=white-space:pre-wrap>    return(y/x)</span>
+}</code></pre>
+
+<pre><code class="language-R">?mean
+</code></pre>
+<h2 id="packages">Packages</h2>
+<pre><code class="language-R"># installing a library
+install.packages(&quot;ggplot2&quot;)
+</code></pre>
+<pre><code>Updating HTML index of packages in '.Library'
+
+Making 'packages.html' ...
+ done
+</code></pre>
+<pre><code class="language-R"># importing a library
+library(ggplot2)
+</code></pre>
+<pre><code class="language-R"># once you import a library, you can call any function from that library
+ggplot(df, aes(a,b)) + geom_point()
+</code></pre>
+<p><img alt="png" src="../output_129_0.png" /></p>
+<pre><code class="language-R">
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Syllabus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Syllabus
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
