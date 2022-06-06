@@ -551,22 +551,22 @@ You type some commands (via at terminal/command prompt or from a file called a s
 <p>In this course, we will use <code>RStudio</code> to interact with <code>R</code>. <code>RStudio</code> is an integrated development environment, in other words user friendly software to interact with a language.</p>
 <h2 id="how-to-install-r-and-rstudio">How to install <code>R</code> and <code>RStudio</code></h2>
 <p>You can install <code>R</code> from:<br />
-(<a href="https://cran.r-project.org/">The Comprehensive R Archive Network</a>)</p>
+<a href="https://cran.r-project.org/">The Comprehensive R Archive Network</a></p>
 <p>You can install <code>RStudio</code> from:<br />
-<a href="">https://www.rstudio.com/products/rstudio/download/</a></p>
+<a href="https://www.rstudio.com/products/rstudio/download/">Download the RStudio IDE - RStudio</a></p>
 <p>Here's a webpage that explains the installation process in steps for different operating systems:<br />
-<a href="">https://techvidvan.com/tutorials/install-r/</a></p>
+<a href="https://techvidvan.com/tutorials/install-r/">Install R and RStudio - A Step-by-Step Guide for Beginners - TechVidvan</a></p>
 <p>Here's a Youtube tutorial for MacOS:<br />
-<a href="">https://www.youtube.com/watch?v=LanBozXJjOk&amp;ab_channel=TomHenry-datasciencewithR</a></p>
+<a href="https://www.youtube.com/watch?v=LanBozXJjOk&amp;ab_channel=TomHenry-datasciencewithR">How to install R and RStudio on Mac - YouTube</a></p>
 <p>Here's a Youtube tutorial for Windows:<br />
-<a href="">https://www.youtube.com/watch?v=TFGYlKvQEQ4&amp;ab_channel=RProgramming-DDS</a></p>
+<a href="https://www.youtube.com/watch?v=TFGYlKvQEQ4&amp;ab_channel=RProgramming-DDS">How to download and install R and RStudio - YouTube</a></p>
 <h2 id="basic-calculations-in-r">Basic calculations in <code>R</code></h2>
 <p>You can use <code>R</code> as a calculator and let it process a one line operation:</p>
 <pre><code class="language-R">1+2
 </code></pre>
 <p>3</p>
 <p>Here's a tidy website that contains a list of useful operators:
-https://www.learnbyexample.org/r-operators/</p>
+<a href="https://www.learnbyexample.org/r-operators/">R Operators - Learn By Example</a></p>
 <p>In this course, we'll be doing more complex computations and we'll need to save the result of a computation to be used later in some other computation. For that reason, we have <em>variables</em>. You can think of a variable as a keyword you chose to store a particular piece of information (numerical, or text or even logical).  </p>
 <p>In <code>R</code>, there are two ways to assign a value to a variable:<br />
 using <code>=</code> and using <code>&lt;-</code></p>
@@ -588,12 +588,6 @@ a
 # but if you want to see a list of variables in the Console:
 ls()
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'b'</li></ol>
 
 <p>Note that <code>R</code> is case sensitive, for example <code>a</code> and <code>A</code> are treated as different variable names. </p>
@@ -614,7 +608,7 @@ A
 <p>10</p>
 <h2 id="basic-data-types-in-r">Basic Data Types in <code>R</code></h2>
 <p>Here's a nice reference for more on basic data types and data structures in <code>R</code>:  </p>
-<p><a href="">https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/</a></p>
+<p><a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/">https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/</a></p>
 <p>There are 6 data types in <code>R</code>:</p>
 <ul>
 <li>character</li>
@@ -702,43 +696,19 @@ vec5 &lt;- 1:10
 </code></pre>
 <pre><code class="language-R">2*vec4
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>4</li><li>-10</li></ol>
 
 <pre><code class="language-R">vec5
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
 
 <pre><code class="language-R">vec6 &lt;- vec5 - vec5
 vec6
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li><li>0</li></ol>
 
 <pre><code class="language-R">vec4 + vec6
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li><li>2</li><li>-5</li></ol>
 
 <pre><code class="language-R">vec7 &lt;- c(1,2,3)
@@ -749,100 +719,64 @@ typeof(vec7)
 typeof(vec8)
 </code></pre>
 <p>'integer'</p>
-<pre><code class="language-R">vec7 == vec8
+<pre><code class="language-R"># in R, == means comparing and asking if the items are equal
+vec7 == vec8
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>TRUE</li><li>TRUE</li><li>TRUE</li></ol>
 
-<pre><code class="language-R"># rdocumentation.org/packages/utils/versions/3.6.2/topics/str
+<pre><code class="language-R"># the str() function compactly displayes the internal STRucture of an R object
+# rdocumentation.org/packages/utils/versions/3.6.2/topics/str
 str(vec8)
 </code></pre>
 <pre><code> int [1:3] 1 2 3
 </code></pre>
 <h3 id="how-to-add-a-new-element">How to add a new element</h3>
-<pre><code class="language-R">vec9 &lt;- c(vec8,4L)
+<pre><code class="language-R"># below, i'm combining vec8 and the number 4 as an integer,
+# the number 4 is appended on the right, 
+# hence the last item of vec9 is 4
+vec9 &lt;- c(vec8,4L)
 vec9
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li></ol>
 
-<pre><code class="language-R">vec10 &lt;- c(0L,vec9)
+<pre><code class="language-R"># below, the number zero is appended to vec9 on the left, 
+# i.e. the first item in vec10 is 0
+vec10 &lt;- c(0L,vec9)
 vec10
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>0</li><li>1</li><li>2</li><li>3</li><li>4</li></ol>
 
 <h3 id="how-to-create-vectors-from-a-sequence-of-numbers">How to create vectors from a sequence of numbers</h3>
-<pre><code class="language-R">vec11 &lt;- 1:10
+<pre><code class="language-R"># the 1:10 command creates a sequence of integers that start at 1 and end at 10
+vec11 &lt;- 1:10
 vec11
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li></ol>
 
-<pre><code class="language-R">vec12 &lt;- seq(from = 1, to = 2, by = 0.1)
+<pre><code class="language-R"># you can create sequences more directly using the seq() function
+# you specify where the sequence of numbers start, end and the stepsize.
+vec12 &lt;- seq(from = 1, to = 2, by = 0.1)
 vec12
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>1.1</li><li>1.2</li><li>1.3</li><li>1.4</li><li>1.5</li><li>1.6</li><li>1.7</li><li>1.8</li><li>1.9</li><li>2</li></ol>
 
-<pre><code class="language-R">vec12 &lt;- seq(from = 1, to = 20)
+<pre><code class="language-R"># if the stepsize is not given, the default stepsize is used, which is 1.
+vec12 &lt;- seq(from = 1, to = 20)
 vec12
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>4</li><li>5</li><li>6</li><li>7</li><li>8</li><li>9</li><li>10</li><li>11</li><li>12</li><li>13</li><li>14</li><li>15</li><li>16</li><li>17</li><li>18</li><li>19</li><li>20</li></ol>
 
 <h3 id="factors">Factors</h3>
-<p>Factors are categorical variables in <code>R</code></p>
+<p>Factors are categorical variables in <code>R</code>. We'll talk about categorical variables and factors later, but as foreshadowing, we can use categorical variables to create hierarchies in the sense that we can compute the mean age of everyone, and at a detailed level, we can compute the mean age of female and male people using "Female" and "Male" categories.</p>
 <pre><code class="language-R">vec13 = as.factor(c(&quot;Male&quot;, &quot;Female&quot;, &quot;Male&quot;, &quot;Female&quot;))
 vec13
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>Male</li><li>Female</li><li>Male</li><li>Female</li></ol>
 
 <details>
     <summary style=display:list-item;cursor:pointer>
         <strong>Levels</strong>:
     </summary>
-    <style>
-    .list-inline {list-style: none; margin:0; padding: 0}
-    .list-inline>li {display: inline-block}
-    .list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-    </style>
     <ol class=list-inline><li>'Female'</li><li>'Male'</li></ol>
 </details>
 
@@ -877,11 +811,7 @@ mylist2
     <li>'A'</li>
 </ol>
 </li>
-    <li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+    <li>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
 </li>
 </ol>
@@ -899,9 +829,10 @@ mylist3
 </ol>
 
 <h3 id="data-frames">Data Frames</h3>
-<p>You can think of <em>data frames</em> as lists of vectors of equal length. <br />
+<p>You can think of <em>data frames</em> as lists of vectors of equal length forming columns. <br />
 Or even better, like a spreadsheet.</p>
-<pre><code class="language-R">data.frame(vec1,vec2,vec3)
+<pre><code class="language-R"># to create a data frame from vectors, you can use the data.frame() function
+data.frame(vec1,vec2,vec3)
 </code></pre>
 <pre><code>Error in data.frame(vec1, vec2, vec3): arguments imply differing number of rows: 5, 6, 4
 Traceback:
@@ -913,6 +844,7 @@ Traceback:
  .     paste(unique(nrows), collapse = ", ")), domain = NA)
 </code></pre>
 <pre><code class="language-R"># since those vectors were of different lengths, R couldn't create a data frame.
+# below, i use length() and cat() functions to return the lengths of the vectors we tried to combine to a data frame above.
 cat(length(vec1),length(vec2),length(vec3))
 </code></pre>
 <pre><code>5 6 4
@@ -921,11 +853,13 @@ cat(length(vec1),length(vec2),length(vec3))
 </code></pre>
 <pre><code class="language-R">vec16 &lt;- c('one', &quot;two&quot;, vec3)
 </code></pre>
-<pre><code class="language-R">cat(length(vec15),length(vec2),length(vec16))
+<pre><code class="language-R"># note that vec15, vec2 and vec16 have the same length after modifying them for the sake of this example.
+cat(length(vec15),length(vec2),length(vec16))
 </code></pre>
 <pre><code>6 6 6
 </code></pre>
-<pre><code class="language-R">data.frame(vec15,vec2,vec16)
+<pre><code class="language-R"># we can create the data frame.
+data.frame(vec15,vec2,vec16)
 </code></pre>
 <table class="dataframe">
 <caption>A data.frame: 6 × 3</caption>
@@ -943,7 +877,9 @@ cat(length(vec1),length(vec2),length(vec3))
 </tbody>
 </table>
 
-<pre><code class="language-R">df &lt;- data.frame(a = vec15,b = vec2,c = vec16, d = vec2 + vec15)
+<pre><code class="language-R"># it's customary to denote the variable that represents a data frame 
+# by the variable name df
+df &lt;- data.frame(a = vec15,b = vec2,c = vec16, d = vec2 + vec15)
 df
 </code></pre>
 <table class="dataframe">
@@ -964,6 +900,8 @@ df
 
 <h3 id="matrices">Matrices</h3>
 <pre><code class="language-R"># the matrix function creates a matrix below that contains 3 rows and 2 columns
+# the difference of a matrix is that the data types of the items in a matrix  need to be equal
+# you can think of matrices as a 2D generalization of vectors.
 mymatrix = matrix(vec16, 3, 2)
 mymatrix
 </code></pre>
@@ -976,7 +914,8 @@ mymatrix
 </tbody>
 </table>
 
-<pre><code class="language-R"># finding the transpose matrix
+<pre><code class="language-R"># finding the transpose matrix: columns are converted to rows and rows to columns.
+# for example, the first column of the matrix above is the first row of the transpose below.
 t(mymatrix)
 </code></pre>
 <table class="dataframe">
@@ -994,43 +933,19 @@ vec3[2]
 <p>'stats'</p>
 <pre><code class="language-R">vec3
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
 
-<pre><code class="language-R">1:3 #means all the numbers between 1 and 3 (1 and 3 included)
+<pre><code class="language-R">1:3 # means all the numbers between 1 and 3 (1 and 3 included)
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li></ol>
 
 <pre><code class="language-R"># what if we want more values
 vec3[1:3]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li></ol>
 
 <pre><code class="language-R">vec3[-1]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
 
 <h3 id="filtering-using-boolean-values">Filtering using Boolean values</h3>
@@ -1039,22 +954,10 @@ vec3[1:3]
 <p>4</p>
 <pre><code class="language-R">vec3[c(T,T,F,T)]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'\''</li></ol>
 
 <pre><code class="language-R">vec3[c(1,2,4)]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'\''</li></ol>
 
 <pre><code class="language-R">vec3[5]
@@ -1100,52 +1003,28 @@ mylist4 &lt;- list(&quot;a&quot; = vec1,
 </code></pre>
 <dl>
     <dt>$a</dt>
-        <dd><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+        <dd>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
 </dd>
     <dt>$vec2</dt>
-        <dd><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+        <dd>
 <ol class=list-inline><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li></ol>
 </dd>
     <dt>$namewithouthquotes</dt>
-        <dd><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+        <dd>
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
 </dd>
     <dt>$mynumber</dt>
         <dd>20</dd>
     <dt>[[5]]</dt>
         <dd><ol>
-    <li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+    <li>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
 </li>
-    <li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+    <li>
 <ol class=list-inline><li>TRUE</li><li>TRUE</li><li>FALSE</li><li>FALSE</li><li>FALSE</li><li>TRUE</li></ol>
 </li>
-    <li><style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
+    <li>
 <ol class=list-inline><li>'a'</li><li>'stats'</li><li>'614'</li><li>'\''</li></ol>
 </li>
 </ol>
@@ -1158,30 +1037,14 @@ UseMethod("mean")</code></pre></dd>
 <pre><code class="language-R"># we gave names to items in the list
 names(mylist4)
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>'a'</li><li>'vec2'</li><li>'namewithouthquotes'</li><li>'mynumber'</li><li>''</li><li>''</li></ol>
 
 <pre><code class="language-R">mylist4[1]
 </code></pre>
-<p><strong>$a</strong> = <style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline&gt;li {display: inline-block}
-.list-inline&gt;li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style></p>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
 
 <pre><code class="language-R">mylist4[&quot;a&quot;]
 </code></pre>
-<p><strong>$a</strong> = <style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline&gt;li {display: inline-block}
-.list-inline&gt;li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style></p>
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li></ol>
 
 <h3 id="slicingindexing-data-frames">Slicing/indexing data frames</h3>
@@ -1205,12 +1068,6 @@ names(mylist4)
 
 <pre><code class="language-R">df$a
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
 
 <pre><code class="language-R">df[&quot;a&quot;]
@@ -1233,22 +1090,10 @@ names(mylist4)
 
 <pre><code class="language-R">df[[&quot;a&quot;]]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
 
 <pre><code class="language-R">df[[1]]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>1</li><li>2</li><li>3</li><li>20</li><li>3</li><li>-1</li></ol>
 
 <pre><code class="language-R">df[1][4]
@@ -1269,12 +1114,6 @@ df[[1]][4]
 <p>20</p>
 <pre><code class="language-R">df[[1]][4:6]
 </code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-
 <ol class=list-inline><li>20</li><li>3</li><li>-1</li></ol>
 
 <pre><code class="language-R"># first row 4th column
