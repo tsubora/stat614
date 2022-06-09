@@ -248,6 +248,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4" class="md-nav__link">
+    Example 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-r-help-system" class="md-nav__link">
     The R Help System
   </a>
@@ -264,6 +292,33 @@
     Functions
   </a>
   
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-5" class="md-nav__link">
+    Example 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" class="md-nav__link">
+    Example 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7" class="md-nav__link">
+    Example 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -275,8 +330,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-8" class="md-nav__link">
+    Example 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-frames" class="md-nav__link">
     Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9" class="md-nav__link">
+    Example 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10" class="md-nav__link">
+    Example 10
   </a>
   
 </li>
@@ -348,6 +424,34 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    Example 1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-4" class="md-nav__link">
+    Example 4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#the-r-help-system" class="md-nav__link">
     The R Help System
   </a>
@@ -364,6 +468,33 @@
     Functions
   </a>
   
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-5" class="md-nav__link">
+    Example 5
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-6" class="md-nav__link">
+    Example 6
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-7" class="md-nav__link">
+    Example 7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -375,8 +506,29 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#example-8" class="md-nav__link">
+    Example 8
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#data-frames" class="md-nav__link">
     Data Frames
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-9" class="md-nav__link">
+    Example 9
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-10" class="md-nav__link">
+    Example 10
   </a>
   
 </li>
@@ -428,181 +580,711 @@ I post the code snippets so that you don't have to type during the lecture.
 Simply copy and paste the code below to RStudio.
 In a few days, I'll add comments and turn this notebook to a proper webpage that contains the explanations, as well.</p>
 <h2 id="getting-started">Getting Started</h2>
-<pre><code class="language-R"># example 1
+<p>We have seen most of the material below before. The examples below will provide good practice. Having written that, there are quite a number of new commands/ideas, as well. </p>
+<h3 id="example-1">Example 1</h3>
+<p>The purpose of this example is to get familiar how to create a vector using the combine <code>c()</code> function.<br />
+Once you have a vector, arithmetic operations can be run using very simple syntax.<br />
+You can make vectors algebraically interact with scalars (i.e. numbers) or with other vectors of same length (termwise).</p>
+<pre><code class="language-R"># create a vector and assign a variable.
 temps = c(51.9, 51.8, 51.9, 53)
+
+# subtract 32 from every item in the vector temps, and multiply the differences by 5/9,
+# that's the conversion formula from fahrenheit to celcius.
 (5/9) * (temps - 32)
+
+# create another vector.
 CT = c(48, 48.2, 48, 48.7)
+
+# when you subtract a vector from another, R runs the subtraction termwise.
 temps - CT
 </code></pre>
-<pre><code class="language-R"># example 2
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>11.0555555555556</li><li>11</li><li>11.0555555555556</li><li>11.6666666666667</li></ol>
+
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>3.9</li><li>3.59999999999999</li><li>3.9</li><li>4.3</li></ol>
+
+<h3 id="example-2">Example 2</h3>
+<p>In this example, we practice indexing and slicing.<br />
+By provoding the desired indices, we can grab the items at those indices of a vector.<br />
+If we want to grab several items at once, the <code>:</code> operator comes very handy to generate a sequence of indices.<br />
+The two new functions you may want to learn about would be the <code>table()</code> and <code>barplot()</code> functions.<br />
+<code>table()</code> is used to create a frequency table.<br />
+more on <code>table()</code>: <a href="https://www.statology.org/table-function-in-r/">https://www.statology.org/table-function-in-r/</a><br />
+more on <code>barplot()</code>: <a href="https://statisticsglobe.com/barplot-in-r">https://statisticsglobe.com/barplot-in-r</a></p>
+<pre><code class="language-R"># create two vectors from given data.
 winner = c(185, 182, 182, 188, 188, 188, 185, 185, 177, 182, 182, 193, 183, 179, 179, 175)
 opponent = c(175, 193, 185, 187, 188, 173, 180, 177, 183, 185, 180, 180, 182, 178, 178, 173)
 
+# you can see the lengths of the vectors in the environment pane of RStudio, 
+# but you may want to compute with that length. 
+# the `length()` function can be used to in those cases. 
 length(winner)
 
+# `seq()` function is used to created a vector whose first item is 2008, last item 1948, 
+# and the each item is 4 less than the previous item (i.e. the stepsize of the arithmetic sequence is -4) 
 year = seq(from=2008, to=1948, by=-4)
 
+# grabbing the 4th item in the vector `winner`,
+# and updating that item with the value 189.
 winner[4] = 189
 
+# grabbing the 5th item in the vector in `winner`,
+# and updating that item as 189.
 winner[5] = 189
 
+# instead of the previous two commands, 
+# we can grab the 4th and 5th items and update them with 189. 
 winner[4:5] = 189
 
+# the function `mean()` computes the mean (i.e. average) of a numerical vector.
 mean(winner)
 
+# the average of the `opponent` vector is computed.
 mean(opponent)
 
+# like in example 1, we can compute the difference of vectors (of same length),
+# that produces of a new vector whose items are the differences of the corresponding values in the given vectors.
 difference = winner - opponent
 
+# we create a data frame from the vectors `year`, `winner`, `opponent` and `difference`
+# those vectors will be columns of the data frame in the same order of the arguments of the function `data.frame()`
 data.frame(year, winner, opponent, difference)
 
+# the one below is a tricky line:
+# `winner &gt; opponent` asks for every index of the vectors, if the item of `winner` vector is greater than 
+# the correspondent item in the `opponent` vector.
+# the result of each of those comparisons is `TRUE` or `FALSE`.
+# hence `winner &gt; opponent` creates a logical vector.
+# then that logical vector is assigned the variable name `taller.won`
 taller.won = winner &gt; opponent
 
+# the `TRUE` and `FALSE`s are counted in the `taller.won` vector
+# the number of `TRUE`s is the the number of the elected president being taller than the other candidate.
 table(taller.won)
 
+# you can create the relative frequency (in percent) table by dividing each frequency by the total frequency
+# and multiplying by 100.
 table(taller.won) / 16 * 100
 
+# finally a barplot is constructed.
+# one minor thing below: we want the values in the horizontal axis to increase as we move to right,
+# whereas our vectors constructed with election years in decreasing order.
+# 'rev(difference)' reverses the `difference` vector.
+# `barplot(rev(difference))` puts a bar at every index of the `rev(difference)` vector as tall as the value at that index.
+# `xlab` and `ylab` arguments of the `barplot()` function allow us name the x (horizontal) and y (vertical) axes.
 barplot(rev(difference), xlab=&quot;Election years 1948 to 2008&quot;, ylab=&quot;Height difference in cm&quot;)
-</code></pre>
-<pre><code class="language-R"># example 3
 
+# note that the bars are not labed horizontally,
+# if you want horizontal labels, you can do the following:
+barplot(rev(difference), names.arg = rev(year), xlab=&quot;Election years 1948 to 2008&quot;, ylab=&quot;Height difference in cm&quot;)
+# depending on the size of the barplot, some horizontal labels can be skipped as R doesn't want the labels to overlap.
+
+# you can also easily draw a scatterplot for the pair of variables: `winner` and `opponent`
+# for every election, a point is generated whose x coordinate is the winner and y coordinate is the opponent.
+plot(winner,opponent)
+
+</code></pre>
+<p>16</p>
+<p>183.4375</p>
+<p>181.0625</p>
+<table class="dataframe">
+<caption>A data.frame: 16 × 4</caption>
+<thead>
+    <tr><th scope=col>year</th><th scope=col>winner</th><th scope=col>opponent</th><th scope=col>difference</th></tr>
+    <tr><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><td>2008</td><td>185</td><td>175</td><td> 10</td></tr>
+    <tr><td>2004</td><td>182</td><td>193</td><td>-11</td></tr>
+    <tr><td>2000</td><td>182</td><td>185</td><td> -3</td></tr>
+    <tr><td>1996</td><td>189</td><td>187</td><td>  2</td></tr>
+    <tr><td>1992</td><td>189</td><td>188</td><td>  1</td></tr>
+    <tr><td>1988</td><td>188</td><td>173</td><td> 15</td></tr>
+    <tr><td>1984</td><td>185</td><td>180</td><td>  5</td></tr>
+    <tr><td>1980</td><td>185</td><td>177</td><td>  8</td></tr>
+    <tr><td>1976</td><td>177</td><td>183</td><td> -6</td></tr>
+    <tr><td>1972</td><td>182</td><td>185</td><td> -3</td></tr>
+    <tr><td>1968</td><td>182</td><td>180</td><td>  2</td></tr>
+    <tr><td>1964</td><td>193</td><td>180</td><td> 13</td></tr>
+    <tr><td>1960</td><td>183</td><td>182</td><td>  1</td></tr>
+    <tr><td>1956</td><td>179</td><td>178</td><td>  1</td></tr>
+    <tr><td>1952</td><td>179</td><td>178</td><td>  1</td></tr>
+    <tr><td>1948</td><td>175</td><td>173</td><td>  2</td></tr>
+</tbody>
+</table>
+
+<pre><code>taller.won
+FALSE  TRUE 
+    4    12
+
+
+
+taller.won
+FALSE  TRUE 
+   25    75
+</code></pre>
+<p><img alt="png" src="../output_6_6.png" /></p>
+<p><img alt="png" src="../output_6_7.png" /></p>
+<p><img alt="png" src="../output_6_8.png" /></p>
+<h3 id="example-3">Example 3</h3>
+<p>In this example, deaths of Prussian soldiers due to horsekicks are studied (I know, we may not be the target audience.)<br />
+Towards the end of the example, our data is compared to Poisson distribution, which models the probability of a given number of events occurring in a fixed interval of time, like what's the probability that your name is called a fixed number of times during a lecture. To learn more about Poisson distributions, you can take a look at the wikipedia page <a href="https://en.wikipedia.org/wiki/Poisson_distribution">https://en.wikipedia.org/wiki/Poisson_distribution</a> or these <a href="https://web.stanford.edu/~mrosenfe/soc_388_notes/PDF%20version%20of%20notes%20on%20different%20families%20of%20distributions.pdf">notes</a> for a somewhat intuitive description.</p>
+<pre><code class="language-R"># first, the data is stored.
+# `k` stores the number of deaths
+# `x` stores the frequencies of the values in `k`.
 k = c(0, 1, 2, 3, 4)
 x = c(109, 65, 22, 3, 1)
-barplot(x, names.arg=k, ylab=&quot;Frequencies&quot;, xlab = 'Number of deaths', main = 'Frequency distribution')
 
+# first, we draw a barplot
+# remember that the first argument denotes the heights of the bars. 
+# and that the `names.arg` argument in the `barplot` function allows us to specify our horizontal labels.
+#  
+barplot(x, names.arg = k, ylab=&quot;Frequencies&quot;, xlab = 'Number of deaths', main = 'Frequency distribution')
+
+# to get the relative frequency barplot, we simply divide the frequencies by the total frequency.
+# and produce a new bar plot using those heights (the name `p` stands for percentage, i suppose.)
 p = x / sum(x)
 barplot(p, names.arg=k, ylab='Relative Frequencies', xlab = 'Number of deaths', main = 'Relative Freq Distr')
 
+# remember that the mean is a weighted sum of relative frequencies, as we discussed in class
+# the way the sample mean `r` is computed below is as follows:
+# `p * k` computes the product of each horizontal value with the height of the corresponding bar.
+# then those little products are added. that way the sample mean is calculated.
 r = sum(p * k)
-v = sum(x * (k - r)^2) / 199
 
+# you can think of the variance as the square of the average error of a horizontal value from the mean.
+# i'll talk more about the variance and standard deviation in the class.
+v = sum(x * (k - r)^2) / 199
+</code></pre>
+<p><img alt="png" src="../output_8_0.png" /></p>
+<p><img alt="png" src="../output_8_1.png" /></p>
+<p>You may find the rest of the example a bit confusing. What's done below is:
+- First, using our sample mean, the probabilities are modeled using a Poisson distribution.<br />
+Why Poisson?<br />
+"How many deaths per year" is the kind of thing Poisson distributions model well.<br />
+Also, Poisson distributions' mean equals their variance, and our sample mean and sample variance are pretty close, which can be taken as further evidence for using Poisson distributions to model our data.</p>
+<pre><code class="language-R"># model the theoretical probabilities using a Poisson distribution whose mean equals to our sample mean.
+# f denotes the relative frequencies (i.e. probabilities).
 f = r^k * exp(- r) / factorial(k)
-f = dpois(k, r)
-floor(200*f)
-x
-cbind(k, p, f)
+f
 </code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.5433508690745</li><li>0.331444030135445</li><li>0.101090429191311</li><li>0.0205550539355665</li><li>0.00313464572517389</li></ol>
+
+<ul>
+<li>We can generate the Poisson distribution above using a built-in function of <code>R</code>.</li>
+</ul>
+<pre><code class="language-R">f = dpois(k, r)
+f
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.5433508690745</li><li>0.331444030135445</li><li>0.101090429191311</li><li>0.0205550539355665</li><li>0.00313464572517389</li></ol>
+
+<ul>
+<li>Then we multiply those theoretical relative frequencies generated by the Poisson distribution by 200 (our total frequency) and round the results down to get integer (theoretical) frequencies.</li>
+</ul>
+<pre><code class="language-R">floor(200*f)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>108</li><li>66</li><li>20</li><li>4</li><li>0</li></ol>
+
+<ul>
+<li>Remember our actual frequencies:</li>
+</ul>
+<pre><code class="language-R">x
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>109</li><li>65</li><li>22</li><li>3</li><li>1</li></ol>
+
+<p>Note that our frequencies are pretty close to the theoretical frequencies of Poisson distribution with a mean that equals our sample mean, and when the sample size is 200 like ours.</p>
+<ul>
+<li>Lastly, we combine the vectors <code>k</code> (labels), <code>p</code> (our actual relative frequencies) and <code>f</code> (the theoretical relative frequencies) to see how good our sample data can be modeled by a Poission distribution.<br />
+This is similar to the comparison of theoretical and our frequencies we did above, except at the relative frequency level.</li>
+</ul>
+<pre><code class="language-R">cbind(k, p, f)
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 5 × 3 of type dbl</caption>
+<thead>
+    <tr><th scope=col>k</th><th scope=col>p</th><th scope=col>f</th></tr>
+</thead>
+<tbody>
+    <tr><td>0</td><td>0.545</td><td>0.543350869</td></tr>
+    <tr><td>1</td><td>0.325</td><td>0.331444030</td></tr>
+    <tr><td>2</td><td>0.110</td><td>0.101090429</td></tr>
+    <tr><td>3</td><td>0.015</td><td>0.020555054</td></tr>
+    <tr><td>4</td><td>0.005</td><td>0.003134646</td></tr>
+</tbody>
+</table>
+
+<h3 id="example-4">Example 4</h3>
+<p>The purpose of this example is to get familiar with using code snippets in <code>R</code>.</p>
+<p>One important takeaway from this example is to learn how to use <code>R</code> scripts in <code>RStudio</code>.
+If you choose <code>File &gt; New File &gt; R Script</code> in <code>RStudio</code>'s top menu and paste 
+the following code snippet (a <em>code snippet</em> is a programming term that refers to a small portion of re-usable source code) into the pane on upper left corner and click the <code>Source</code> key, <code>RStudio</code> will run all the lines you pasted.</p>
+<p>You can save those code snippets in your hard-drive for future use. A good practice is to have a particular directory on your hard drive for those scripts, you name those files in a descriptive way when saving, you use the extension <code>.R</code>. Example: <code>horsekicks.r</code></p>
+<p>One remark: When you want a variable to be displayed on console, you'll need to specify that you want it to be printed by using the <code>print()</code> function in your script. If you want to read more about the <code>print()</code> function: <a href="https://riptutorial.com/r/example/1221/printing-and-displaying-strings">https://riptutorial.com/r/example/1221/printing-and-displaying-strings</a>  </p>
 <pre><code class="language-R"># Prussian horsekick data
-k = c(0, 1, 2, 3, 4)
-x = c(109, 65, 22, 3, 1)
-p = x / sum(x) #relative frequencies
-print(p)
-r = sum(k * p) #mean
-v = sum(x * (k - r)^2) / 199 #variance
-print(r)
-print(v)
-f = dpois(k, r)
-print(cbind(k, p, f))
+
+# rpois() generates random values according to the Poisson distribution and creates an artificially simulated sample.
+# we take the mean = .61 like in example 3, and sample size = 200.
+y = rpois(200, lambda=.61) 
+# create a table of sample frequencies.
+kicks = table(y)
+# create a table of sample relative frequencies.
+sample = kicks / 200
+# display the table of sample relative frequencies.
+print(sample)
+
+
+# create a theoretical relative distribution according to Poisson distribution with mean = 0.61 
+theoretical = dpois(0:3, lambda=.61)
+# display the theoretical relative frequencies.
+print(theoretical)
+
+# combine the theoretical and sample relative frequencies in a table:
+cbind(theoretical, Sample)
+
+# print the table
+print(cbind(theoretical, Sample))
 </code></pre>
-<pre><code class="language-R">getwd()
-setwd(&quot;/Users/boraferlengez/Dropbox/teaching/hunter college/stat614.01/lecture_notes&quot;)
-getwd()
+<pre><code>y
+    0     1     2     3     4 
+0.525 0.320 0.130 0.020 0.005 
+[1] 0.54335087 0.33144403 0.10109043 0.02055505
 </code></pre>
-<pre><code class="language-R">y = rpois(200, lambda=.61)
-kicks = table(y) #table of sample frequencies
-kicks
-Theoretical = dpois(0:3, lambda=.61)
-Sample = kicks / 200
-cbind(Theoretical, Sample)
-mean(y)
-var(y)
+<table class="dataframe">
+<caption>A matrix: 4 × 2 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>theoretical</th><th scope=col>Sample</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>0</th><td>0.54335087</td><td>0.515</td></tr>
+    <tr><th scope=row>1</th><td>0.33144403</td><td>0.330</td></tr>
+    <tr><th scope=row>2</th><td>0.10109043</td><td>0.135</td></tr>
+    <tr><th scope=row>3</th><td>0.02055505</td><td>0.020</td></tr>
+</tbody>
+</table>
+
+<pre><code>  theoretical Sample
+0  0.54335087  0.515
+1  0.33144403  0.330
+2  0.10109043  0.135
+3  0.02055505  0.020
 </code></pre>
+<p>One interesting remark is that the actual data in example 3 fits the theoretical Poisson distribution better than the simulated data in example 4.</p>
 <h3 id="the-r-help-system">The R Help System</h3>
-<pre><code class="language-R">?barplot
+<pre><code class="language-R"># to ask about a function/keyword.
+?barplot
 </code></pre>
-<pre><code class="language-R">help(barplot)
+<pre><code class="language-R"># alternative way to ask about a function/keyword.
+help(barplot)
 </code></pre>
-<pre><code class="language-R">??dpois
+<pre><code class="language-R"># searches through the help documentation for the keyword and finds all the documentations that contain the keyword.
+??dpois
 </code></pre>
-<pre><code class="language-R">help.search(&quot;dpois&quot;)
+<pre><code class="language-R"># searches through the help documentation for the keyword and finds all the documentations that contain the keyword.
+help.search(&quot;dpois&quot;)
 </code></pre>
-<pre><code class="language-R">example(mean)
+<pre><code class="language-R"># to get an example of how to use a function.
+example(mean)
 </code></pre>
-<pre><code class="language-R">?mean
+<pre><code>mean&gt; x &lt;- c(0:10, 50)
+
+mean&gt; xm &lt;- mean(x)
+
+mean&gt; c(xm, mean(x, trim = 0.10))
+[1] 8.75 5.50
+</code></pre>
+<pre><code class="language-R"># usually, there is an example at the end of the help file, as well.
+?mean
 </code></pre>
 <h2 id="functions">Functions</h2>
-<pre><code class="language-R"># defining the function
+<h3 id="example-5">Example 5</h3>
+<p>In this example, defining and using a function are illustrated.<br />
+We have discussed what functions are and how to define a function (the syntax of defining functions) last week.</p>
+<pre><code class="language-R"># defining the function whose name will be var.n
+# and which computes the sample variance of a vector of numbers.
 var.n = function(x){
     v = var(x)
     n = NROW(x)
     v * (n - 1) / n
 }
 
-# using the function 
+# using the function.
 temps = c(51.9, 51.8, 51.9, 53)
 var(temps)
 var.n(temps)
 </code></pre>
-<pre><code class="language-R"># if the definition is one line { } are not needed.
+<p>0.323333333333334</p>
+<p>0.242500000000001</p>
+<h3 id="example-6">Example 6</h3>
+<p>Omitted, because we don't need to discuss integration (a calculus operation) at this point.</p>
+<h3 id="example-7">Example 7</h3>
+<p>The (<code>R</code>) function <code>curve()</code> which draws the graph of the (mathematical &amp; <code>R</code>) function in its argument.</p>
+<pre><code class="language-R"># remark: if the definition is one line { } are not needed.
 f = function(x, a=1, b=1)
     x^(a-1) * (1-x)^(b-1)
 </code></pre>
-<pre><code class="language-R">curve(f(x,2,5), from=0, to=1)
+<pre><code class="language-R"># graphing a function from real numbers to real numbers. 
+# remark: the function to be graphed should always be defined in terms of x.
+curve(f(x,2,5), from=0, to=1)
+
+# if you like, you can label the x and y axes.
+curve(f(x,2,5), from=0, to=1, xlab=&quot;inputs&quot;, ylab='outputs')
 </code></pre>
+<p><img alt="png" src="../output_37_0.png" /></p>
+<p><img alt="png" src="../output_37_1.png" /></p>
 <h2 id="vectors-and-matrices">Vectors and Matrices</h2>
-<pre><code class="language-R"># creating a matrix from given data
+<h3 id="example-8">Example 8</h3>
+<p>Below, we create a matrix that represents the class mobility of generations. The entry $P_{ij}$ (namely, the entry in row $i$, column $j$) represents the probability the child being in the class represented by column $j$, if the parents are in row $i$.</p>
+<pre><code class="language-R"># creating a matrix from given data.
 probs = c(.45, .05, .01, .48, .70, .50, .07, .25, .49)
 P = matrix(probs, nrow=3, ncol=3)
 P
-# naming rows and columns
+# naming rows and columns.
 rownames(P) &lt;- c(&quot;lower_old&quot;, &quot;middle_old&quot;, &quot;upper_old&quot;)
 colnames(P) &lt;- c(&quot;lower_new&quot;, &quot;middle_new&quot;, &quot;upper_new&quot;)
 P
 
+# how to obtain row sums.
 rowSums(P)
 
+# how to obtain column sums.
 colSums(P)
 
+# grabbing the entry in row 1, column 3
 P[1, 3]
 
+# grabbing the whole row 1
 P[1, ]
 
-P[,2]
+# grabbing the whole column 2
+P[ ,2]
 </code></pre>
-<pre><code class="language-R">Q = matrix(c( 0.45, 0.48, 0.07,
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<tbody>
+    <tr><td>0.45</td><td>0.48</td><td>0.07</td></tr>
+    <tr><td>0.05</td><td>0.70</td><td>0.25</td></tr>
+    <tr><td>0.01</td><td>0.50</td><td>0.49</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>lower_new</th><th scope=col>middle_new</th><th scope=col>upper_new</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>lower_old</th><td>0.45</td><td>0.48</td><td>0.07</td></tr>
+    <tr><th scope=row>middle_old</th><td>0.05</td><td>0.70</td><td>0.25</td></tr>
+    <tr><th scope=row>upper_old</th><td>0.01</td><td>0.50</td><td>0.49</td></tr>
+</tbody>
+</table>
+
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style>
+<dl class=dl-inline><dt>lower_old</dt><dd>1</dd><dt>middle_old</dt><dd>1</dd><dt>upper_old</dt><dd>1</dd></dl>
+
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style>
+<dl class=dl-inline><dt>lower_new</dt><dd>0.51</dd><dt>middle_new</dt><dd>1.68</dd><dt>upper_new</dt><dd>0.81</dd></dl>
+
+<p>0.07</p>
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style>
+<dl class=dl-inline><dt>lower_new</dt><dd>0.45</dd><dt>middle_new</dt><dd>0.48</dd><dt>upper_new</dt><dd>0.07</dd></dl>
+
+<style>
+.dl-inline {width: auto; margin:0; padding: 0}
+.dl-inline>dt, .dl-inline>dd {float: none; width: auto; display: inline-block}
+.dl-inline>dt::after {content: ":\0020"; padding-right: .5ex}
+.dl-inline>dt:not(:first-of-type) {padding-left: .5ex}
+</style>
+<dl class=dl-inline><dt>lower_old</dt><dd>0.48</dd><dt>middle_old</dt><dd>0.7</dd><dt>upper_old</dt><dd>0.5</dd></dl>
+
+<pre><code class="language-R"># it's probably easier to define a matrix using the following command,
+# instead of typing two lines as above example.
+# `byrow=TRUE` argument guarantees that the numbers are placed in rows
+# and once sufficiently many numbers are placed, 
+# the next number is placed as the first entry in the row below. 
+Q = matrix(c( 0.45, 0.48, 0.07,
               0.05, 0.70, 0.25,
               0.01, 0.50, 0.49), nrow=3, ncol=3, byrow=TRUE)
 Q
 </code></pre>
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<tbody>
+    <tr><td>0.45</td><td>0.48</td><td>0.07</td></tr>
+    <tr><td>0.05</td><td>0.70</td><td>0.25</td></tr>
+    <tr><td>0.01</td><td>0.50</td><td>0.49</td></tr>
+</tbody>
+</table>
+
+<p>It's easy to do matrix operations in <code>R</code>.<br />
+We probably won't need those operations, in case we do, I can go over basic matrix operations. But, here's the list anyways: 
+(Ignore the operations that doesn't make sense to you.)</p>
+<pre><code class="language-R"># elementwise multiplication
+P * Q
+
+# exponentiating elementwise
+P^2
+
+# matrix multiplication
+P %*% Q
+
+# inverse matrix
+solve(P)
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>lower_new</th><th scope=col>middle_new</th><th scope=col>upper_new</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>lower_old</th><td>0.2025</td><td>0.2304</td><td>0.0049</td></tr>
+    <tr><th scope=row>middle_old</th><td>0.0025</td><td>0.4900</td><td>0.0625</td></tr>
+    <tr><th scope=row>upper_old</th><td>0.0001</td><td>0.2500</td><td>0.2401</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>lower_new</th><th scope=col>middle_new</th><th scope=col>upper_new</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>lower_old</th><td>0.2025</td><td>0.2304</td><td>0.0049</td></tr>
+    <tr><th scope=row>middle_old</th><td>0.0025</td><td>0.4900</td><td>0.0625</td></tr>
+    <tr><th scope=row>upper_old</th><td>0.0001</td><td>0.2500</td><td>0.2401</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<tbody>
+    <tr><th scope=row>lower_old</th><td>0.2272</td><td>0.5870</td><td>0.1858</td></tr>
+    <tr><th scope=row>middle_old</th><td>0.0600</td><td>0.6390</td><td>0.3010</td></tr>
+    <tr><th scope=row>upper_old</th><td>0.0344</td><td>0.5998</td><td>0.3658</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A matrix: 3 × 3 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>lower_old</th><th scope=col>middle_old</th><th scope=col>upper_old</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>lower_new</th><td> 2.4549550</td><td>-2.254505</td><td> 0.7995495</td></tr>
+    <tr><th scope=row>middle_new</th><td>-0.2477477</td><td> 2.475225</td><td>-1.2274775</td></tr>
+    <tr><th scope=row>upper_new</th><td> 0.2027027</td><td>-2.479730</td><td> 3.2770270</td></tr>
+</tbody>
+</table>
+
 <h3 id="data-frames">Data Frames</h3>
+<p>Data frames are different from the matrices. The data type of entries of a matrix are all the same. You can think of a matrix as a 2D vector.<br />
+On the other hand, a data frame consists of vertical vectors. Namely, each item in the same column has the same data type, but items in different columns don't have to have the same data type. 
+It's like stacking vertical vectors horizontally.</p>
+<h3 id="example-9">Example 9</h3>
+<p>In this example, the purpose is to learn different ways of displaying a data frame and getting summary information of a data frame.</p>
 <pre><code class="language-R"># displaying all data
 
 USArrests
 </code></pre>
-<pre><code class="language-R"># sometimes there is too much data to display,
+<table class="dataframe">
+<caption>A data.frame: 50 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+    <tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>Alabama</th><td>13.2</td><td>236</td><td>58</td><td>21.2</td></tr>
+    <tr><th scope=row>Alaska</th><td>10.0</td><td>263</td><td>48</td><td>44.5</td></tr>
+    <tr><th scope=row>Arizona</th><td> 8.1</td><td>294</td><td>80</td><td>31.0</td></tr>
+    <tr><th scope=row>Arkansas</th><td> 8.8</td><td>190</td><td>50</td><td>19.5</td></tr>
+    <tr><th scope=row>California</th><td> 9.0</td><td>276</td><td>91</td><td>40.6</td></tr>
+    <tr><th scope=row>Colorado</th><td> 7.9</td><td>204</td><td>78</td><td>38.7</td></tr>
+    <tr><th scope=row>Connecticut</th><td> 3.3</td><td>110</td><td>77</td><td>11.1</td></tr>
+    <tr><th scope=row>Delaware</th><td> 5.9</td><td>238</td><td>72</td><td>15.8</td></tr>
+    <tr><th scope=row>Florida</th><td>15.4</td><td>335</td><td>80</td><td>31.9</td></tr>
+    <tr><th scope=row>Georgia</th><td>17.4</td><td>211</td><td>60</td><td>25.8</td></tr>
+    <tr><th scope=row>Hawaii</th><td> 5.3</td><td> 46</td><td>83</td><td>20.2</td></tr>
+    <tr><th scope=row>Idaho</th><td> 2.6</td><td>120</td><td>54</td><td>14.2</td></tr>
+    <tr><th scope=row>Illinois</th><td>10.4</td><td>249</td><td>83</td><td>24.0</td></tr>
+    <tr><th scope=row>Indiana</th><td> 7.2</td><td>113</td><td>65</td><td>21.0</td></tr>
+    <tr><th scope=row>Iowa</th><td> 2.2</td><td> 56</td><td>57</td><td>11.3</td></tr>
+    <tr><th scope=row>Kansas</th><td> 6.0</td><td>115</td><td>66</td><td>18.0</td></tr>
+    <tr><th scope=row>Kentucky</th><td> 9.7</td><td>109</td><td>52</td><td>16.3</td></tr>
+    <tr><th scope=row>Louisiana</th><td>15.4</td><td>249</td><td>66</td><td>22.2</td></tr>
+    <tr><th scope=row>Maine</th><td> 2.1</td><td> 83</td><td>51</td><td> 7.8</td></tr>
+    <tr><th scope=row>Maryland</th><td>11.3</td><td>300</td><td>67</td><td>27.8</td></tr>
+    <tr><th scope=row>Massachusetts</th><td> 4.4</td><td>149</td><td>85</td><td>16.3</td></tr>
+    <tr><th scope=row>Michigan</th><td>12.1</td><td>255</td><td>74</td><td>35.1</td></tr>
+    <tr><th scope=row>Minnesota</th><td> 2.7</td><td> 72</td><td>66</td><td>14.9</td></tr>
+    <tr><th scope=row>Mississippi</th><td>16.1</td><td>259</td><td>44</td><td>17.1</td></tr>
+    <tr><th scope=row>Missouri</th><td> 9.0</td><td>178</td><td>70</td><td>28.2</td></tr>
+    <tr><th scope=row>Montana</th><td> 6.0</td><td>109</td><td>53</td><td>16.4</td></tr>
+    <tr><th scope=row>Nebraska</th><td> 4.3</td><td>102</td><td>62</td><td>16.5</td></tr>
+    <tr><th scope=row>Nevada</th><td>12.2</td><td>252</td><td>81</td><td>46.0</td></tr>
+    <tr><th scope=row>New Hampshire</th><td> 2.1</td><td> 57</td><td>56</td><td> 9.5</td></tr>
+    <tr><th scope=row>New Jersey</th><td> 7.4</td><td>159</td><td>89</td><td>18.8</td></tr>
+    <tr><th scope=row>New Mexico</th><td>11.4</td><td>285</td><td>70</td><td>32.1</td></tr>
+    <tr><th scope=row>New York</th><td>11.1</td><td>254</td><td>86</td><td>26.1</td></tr>
+    <tr><th scope=row>North Carolina</th><td>13.0</td><td>337</td><td>45</td><td>16.1</td></tr>
+    <tr><th scope=row>North Dakota</th><td> 0.8</td><td> 45</td><td>44</td><td> 7.3</td></tr>
+    <tr><th scope=row>Ohio</th><td> 7.3</td><td>120</td><td>75</td><td>21.4</td></tr>
+    <tr><th scope=row>Oklahoma</th><td> 6.6</td><td>151</td><td>68</td><td>20.0</td></tr>
+    <tr><th scope=row>Oregon</th><td> 4.9</td><td>159</td><td>67</td><td>29.3</td></tr>
+    <tr><th scope=row>Pennsylvania</th><td> 6.3</td><td>106</td><td>72</td><td>14.9</td></tr>
+    <tr><th scope=row>Rhode Island</th><td> 3.4</td><td>174</td><td>87</td><td> 8.3</td></tr>
+    <tr><th scope=row>South Carolina</th><td>14.4</td><td>279</td><td>48</td><td>22.5</td></tr>
+    <tr><th scope=row>South Dakota</th><td> 3.8</td><td> 86</td><td>45</td><td>12.8</td></tr>
+    <tr><th scope=row>Tennessee</th><td>13.2</td><td>188</td><td>59</td><td>26.9</td></tr>
+    <tr><th scope=row>Texas</th><td>12.7</td><td>201</td><td>80</td><td>25.5</td></tr>
+    <tr><th scope=row>Utah</th><td> 3.2</td><td>120</td><td>80</td><td>22.9</td></tr>
+    <tr><th scope=row>Vermont</th><td> 2.2</td><td> 48</td><td>32</td><td>11.2</td></tr>
+    <tr><th scope=row>Virginia</th><td> 8.5</td><td>156</td><td>63</td><td>20.7</td></tr>
+    <tr><th scope=row>Washington</th><td> 4.0</td><td>145</td><td>73</td><td>26.2</td></tr>
+    <tr><th scope=row>West Virginia</th><td> 5.7</td><td> 81</td><td>39</td><td> 9.3</td></tr>
+    <tr><th scope=row>Wisconsin</th><td> 2.6</td><td> 53</td><td>66</td><td>10.8</td></tr>
+    <tr><th scope=row>Wyoming</th><td> 6.8</td><td>161</td><td>60</td><td>15.6</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R"># sometimes (and by sometimes i mean almost always) 
+# there is too much data to display,
 # in those cases, displaying few top or bottom rows
-# is a good idea to see what kind of data we have
+# is a good idea to see what kind of data we have.
 
 head(USArrests)
 
+# if you want to see more rows from top, you can specify that.
 head(USArrests, 14)
 
+# similarly, you can display few bottom rows, as well,
+# using the `tail()` function.
 tail(USArrests)
 </code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+    <tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>Alabama</th><td>13.2</td><td>236</td><td>58</td><td>21.2</td></tr>
+    <tr><th scope=row>Alaska</th><td>10.0</td><td>263</td><td>48</td><td>44.5</td></tr>
+    <tr><th scope=row>Arizona</th><td> 8.1</td><td>294</td><td>80</td><td>31.0</td></tr>
+    <tr><th scope=row>Arkansas</th><td> 8.8</td><td>190</td><td>50</td><td>19.5</td></tr>
+    <tr><th scope=row>California</th><td> 9.0</td><td>276</td><td>91</td><td>40.6</td></tr>
+    <tr><th scope=row>Colorado</th><td> 7.9</td><td>204</td><td>78</td><td>38.7</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A data.frame: 14 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+    <tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>Alabama</th><td>13.2</td><td>236</td><td>58</td><td>21.2</td></tr>
+    <tr><th scope=row>Alaska</th><td>10.0</td><td>263</td><td>48</td><td>44.5</td></tr>
+    <tr><th scope=row>Arizona</th><td> 8.1</td><td>294</td><td>80</td><td>31.0</td></tr>
+    <tr><th scope=row>Arkansas</th><td> 8.8</td><td>190</td><td>50</td><td>19.5</td></tr>
+    <tr><th scope=row>California</th><td> 9.0</td><td>276</td><td>91</td><td>40.6</td></tr>
+    <tr><th scope=row>Colorado</th><td> 7.9</td><td>204</td><td>78</td><td>38.7</td></tr>
+    <tr><th scope=row>Connecticut</th><td> 3.3</td><td>110</td><td>77</td><td>11.1</td></tr>
+    <tr><th scope=row>Delaware</th><td> 5.9</td><td>238</td><td>72</td><td>15.8</td></tr>
+    <tr><th scope=row>Florida</th><td>15.4</td><td>335</td><td>80</td><td>31.9</td></tr>
+    <tr><th scope=row>Georgia</th><td>17.4</td><td>211</td><td>60</td><td>25.8</td></tr>
+    <tr><th scope=row>Hawaii</th><td> 5.3</td><td> 46</td><td>83</td><td>20.2</td></tr>
+    <tr><th scope=row>Idaho</th><td> 2.6</td><td>120</td><td>54</td><td>14.2</td></tr>
+    <tr><th scope=row>Illinois</th><td>10.4</td><td>249</td><td>83</td><td>24.0</td></tr>
+    <tr><th scope=row>Indiana</th><td> 7.2</td><td>113</td><td>65</td><td>21.0</td></tr>
+</tbody>
+</table>
+
+<table class="dataframe">
+<caption>A data.frame: 6 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+    <tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>Vermont</th><td>2.2</td><td> 48</td><td>32</td><td>11.2</td></tr>
+    <tr><th scope=row>Virginia</th><td>8.5</td><td>156</td><td>63</td><td>20.7</td></tr>
+    <tr><th scope=row>Washington</th><td>4.0</td><td>145</td><td>73</td><td>26.2</td></tr>
+    <tr><th scope=row>West Virginia</th><td>5.7</td><td> 81</td><td>39</td><td> 9.3</td></tr>
+    <tr><th scope=row>Wisconsin</th><td>2.6</td><td> 53</td><td>66</td><td>10.8</td></tr>
+    <tr><th scope=row>Wyoming</th><td>6.8</td><td>161</td><td>60</td><td>15.6</td></tr>
+</tbody>
+</table>
+
+<p>Since we're using <code>RStudio</code>, we can see the information below easily. In case, we want to display those information in the console or compute with them, this is how it's done:</p>
 <pre><code class="language-R">## size/summary of data
 
-# number of observations, i.e. number of rows
-NROW(USArrests)
-
-# size of the data
-dim(USArrests)
-
-# column names
-names(USArrests)
-
-rownames(USArrests) # lists row names
-colnames(USArrests) # lists column names
-dimnames(USArrests) # lists both row and column names
-
-#structure of the data
-str(USArrests) # str short for structure
+# str short for structure
 </code></pre>
 <pre><code class="language-R"># if you prefer to work with matrices:
-
 arrests = as.matrix(USArrests)
 str(arrests)
 </code></pre>
+<pre><code> num [1:50, 1:4] 13.2 10 8.1 8.8 9 7.9 3.3 5.9 15.4 17.4 ...
+ - attr(*, "dimnames")=List of 2
+  ..$ : chr [1:50] "Alabama" "Alaska" "Arizona" "Arkansas" ...
+  ..$ : chr [1:4] "Murder" "Assault" "UrbanPop" "Rape"
+</code></pre>
+<h3 id="example-10">Example 10</h3>
+<p>Summary statistics and basic visualization.</p>
 <pre><code class="language-R">summary(USArrests)
+</code></pre>
+<pre><code>     Murder          Assault         UrbanPop          Rape      
+ Min.   : 0.800   Min.   : 45.0   Min.   :32.00   Min.   : 7.30  
+ 1st Qu.: 4.075   1st Qu.:109.0   1st Qu.:54.50   1st Qu.:15.07  
+ Median : 7.250   Median :159.0   Median :66.00   Median :20.10  
+ Mean   : 7.788   Mean   :170.8   Mean   :65.54   Mean   :21.23  
+ 3rd Qu.:11.250   3rd Qu.:249.0   3rd Qu.:77.75   3rd Qu.:26.18  
+ Max.   :17.400   Max.   :337.0   Max.   :91.00   Max.   :46.00
 </code></pre>
 <pre><code class="language-R"># extracting data
 USArrests[&quot;California&quot;, &quot;Murder&quot;]
@@ -613,20 +1295,57 @@ USArrests[, &quot;Murder&quot;]
 
 USArrests$Murder
 </code></pre>
+<p>9</p>
+<table class="dataframe">
+<caption>A data.frame: 1 × 4</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+    <tr><th></th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>California</th><td>9</td><td>276</td><td>91</td><td>40.6</td></tr>
+</tbody>
+</table>
+
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>13.2</li><li>10</li><li>8.1</li><li>8.8</li><li>9</li><li>7.9</li><li>3.3</li><li>5.9</li><li>15.4</li><li>17.4</li><li>5.3</li><li>2.6</li><li>10.4</li><li>7.2</li><li>2.2</li><li>6</li><li>9.7</li><li>15.4</li><li>2.1</li><li>11.3</li><li>4.4</li><li>12.1</li><li>2.7</li><li>16.1</li><li>9</li><li>6</li><li>4.3</li><li>12.2</li><li>2.1</li><li>7.4</li><li>11.4</li><li>11.1</li><li>13</li><li>0.8</li><li>7.3</li><li>6.6</li><li>4.9</li><li>6.3</li><li>3.4</li><li>14.4</li><li>3.8</li><li>13.2</li><li>12.7</li><li>3.2</li><li>2.2</li><li>8.5</li><li>4</li><li>5.7</li><li>2.6</li><li>6.8</li></ol>
+
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>13.2</li><li>10</li><li>8.1</li><li>8.8</li><li>9</li><li>7.9</li><li>3.3</li><li>5.9</li><li>15.4</li><li>17.4</li><li>5.3</li><li>2.6</li><li>10.4</li><li>7.2</li><li>2.2</li><li>6</li><li>9.7</li><li>15.4</li><li>2.1</li><li>11.3</li><li>4.4</li><li>12.1</li><li>2.7</li><li>16.1</li><li>9</li><li>6</li><li>4.3</li><li>12.2</li><li>2.1</li><li>7.4</li><li>11.4</li><li>11.1</li><li>13</li><li>0.8</li><li>7.3</li><li>6.6</li><li>4.9</li><li>6.3</li><li>3.4</li><li>14.4</li><li>3.8</li><li>13.2</li><li>12.7</li><li>3.2</li><li>2.2</li><li>8.5</li><li>4</li><li>5.7</li><li>2.6</li><li>6.8</li></ol>
+
 <pre><code class="language-R"># to create a frequency histogram
 
 hist(USArrests[, &quot;Murder&quot;])
 hist(USArrests$Murder)
 </code></pre>
+<p><img alt="png" src="../output_56_0.png" /></p>
+<p><img alt="png" src="../output_56_1.png" /></p>
 <pre><code class="language-R"># to create a probability (relative frequency) histogram
 
 library(MASS)
 truehist(USArrests$Murder)
 </code></pre>
+<p><img alt="png" src="../output_57_0.png" /></p>
 <pre><code class="language-R">hist(USArrests$Murder, prob=TRUE, breaks=&quot;scott&quot;)
 </code></pre>
+<p><img alt="png" src="../output_58_0.png" /></p>
 <pre><code class="language-R">USArrests$Murder
 </code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>13.2</li><li>10</li><li>8.1</li><li>8.8</li><li>9</li><li>7.9</li><li>3.3</li><li>5.9</li><li>15.4</li><li>17.4</li><li>5.3</li><li>2.6</li><li>10.4</li><li>7.2</li><li>2.2</li><li>6</li><li>9.7</li><li>15.4</li><li>2.1</li><li>11.3</li><li>4.4</li><li>12.1</li><li>2.7</li><li>16.1</li><li>9</li><li>6</li><li>4.3</li><li>12.2</li><li>2.1</li><li>7.4</li><li>11.4</li><li>11.1</li><li>13</li><li>0.8</li><li>7.3</li><li>6.6</li><li>4.9</li><li>6.3</li><li>3.4</li><li>14.4</li><li>3.8</li><li>13.2</li><li>12.7</li><li>3.2</li><li>2.2</li><li>8.5</li><li>4</li><li>5.7</li><li>2.6</li><li>6.8</li></ol>
+
 <h3 id="attaching-a-data-frame">Attaching a data frame</h3>
 <pre><code class="language-R"># to save time, sometimes we attach a data frame so that we can use the 
 # row/column names directly without the need of slicing or $ sign.
@@ -642,12 +1361,28 @@ detach(USArrests)
 <pre><code class="language-R">attach(USArrests)
 plot(UrbanPop, Murder)
 </code></pre>
+<p><img alt="png" src="../output_63_0.png" /></p>
 <pre><code class="language-R">pairs(USArrests)
 </code></pre>
+<p><img alt="png" src="../output_64_0.png" /></p>
 <pre><code class="language-R">cor(UrbanPop, Murder)
 </code></pre>
+<p>0.0695726217359934</p>
 <pre><code class="language-R">cor(USArrests)
 </code></pre>
+<table class="dataframe">
+<caption>A matrix: 4 × 4 of type dbl</caption>
+<thead>
+    <tr><th></th><th scope=col>Murder</th><th scope=col>Assault</th><th scope=col>UrbanPop</th><th scope=col>Rape</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>Murder</th><td>1.00000000</td><td>0.8018733</td><td>0.06957262</td><td>0.5635788</td></tr>
+    <tr><th scope=row>Assault</th><td>0.80187331</td><td>1.0000000</td><td>0.25887170</td><td>0.6652412</td></tr>
+    <tr><th scope=row>UrbanPop</th><td>0.06957262</td><td>0.2588717</td><td>1.00000000</td><td>0.4113412</td></tr>
+    <tr><th scope=row>Rape</th><td>0.56357883</td><td>0.6652412</td><td>0.41134124</td><td>1.0000000</td></tr>
+</tbody>
+</table>
+
 <h2 id="importing-data">Importing Data</h2>
 <p>http://www.r-tutor.com/r-introduction/data-frame/data-import</p>
 
