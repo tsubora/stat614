@@ -454,9 +454,13 @@
 </tbody>
 </table>
 <pre><code class="language-R"># for those who are interested, this is how i randomized the hw assignments for each team
+
 set.seed(42) # setting a seed makes a randomization process reproducible
+
 problems &lt;- 1:7 # creates a vector (1,2,3,4,5,6,7) 
+
 problems_shuffled &lt;- sample(problems) # samples from problems vector, i.e. picks 7 numbers from problems randomly
+
 rep(problems_shuffled,2) # since there are 14 students and 7 problems, i duplicated the shuffled problem numbers
 </code></pre>
 <style>
@@ -503,7 +507,8 @@ Or pick any exercise at the end of chapter 1. Explain the question and your answ
 <p>Explain shortly what Euclidean norm is and write a function that computes the Euclidean length (norm) of a vector (exc 1.10 in the textbook).</p>
 </li>
 <li>
-<p>~Explain the difference between bar plots and histograms. Give examples for each that illustrates the difference. You can pick columns from data sets that come with <code>R</code>, or go with numbers you arbitrarily pick.~ Nah, do exercise 1.14 in chapter 1 instead.</p>
+<p>~Explain the difference between bar plots and histograms. Give examples for each that illustrates the difference. You can pick columns from data sets that come with <code>R</code>, or go with numbers you arbitrarily pick.~<br />
+Nah, do exercise 1.14 in chapter 1 instead.</p>
 </li>
 </ol>
 <pre><code class="language-R">
