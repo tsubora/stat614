@@ -1,0 +1,583 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>Homework - Stat 614 - Data Analysis Using Statistical Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#homework-assignments" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-header__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stat 614 - Data Analysis Using Statistical Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Homework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Stat 614 - Data Analysis Using Statistical Software" class="md-nav__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stat 614 - Data Analysis Using Statistical Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Homework
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Homework
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homework-1" class="md-nav__link">
+    Homework 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-and-their-tasks" class="md-nav__link">
+    Teams and their tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#due-dates" class="md-nav__link">
+    Due dates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../intro_to_r/" class="md-nav__link">
+        00 - Intro to R
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chapter_1_code_snippets/" class="md-nav__link">
+        01 - Chapter 1
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#homework-1" class="md-nav__link">
+    Homework 1
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework 1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#teams-and-their-tasks" class="md-nav__link">
+    Teams and their tasks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#due-dates" class="md-nav__link">
+    Due dates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problems" class="md-nav__link">
+    Problems
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="homework-assignments">Homework Assignments</h1>
+<h2 id="instructions">Instructions</h2>
+<p>Every week, you'll be paired up with another colleague of yours. And each pair has two tasks:
+- Do the assigned problems.
+- Give feedback to another pair (making corrections and asking for/suggesting clarifications and even suggesting a better approach).</p>
+<h2 id="homework-1">Homework 1</h2>
+<p>The purpose of this week's hw is to make sure the following arrangement works and you find ways to communicate (e.g. private Telegram chats).</p>
+<h3 id="teams-and-their-tasks">Teams and their tasks</h3>
+<p>Task one is doing the problems and writing <code>R</code> code and saving the results on a file. The file can be a MS Word file, it can be an <code>R</code> script created in <code>RStudio</code> that contains comment lines explaining the work. Or some other reasonable way where the supervisor team can read, duplicate (if necessary) and understand the work.  </p>
+<p>Then the supervisor team looks at the work (put yourselves into my shoes, you're active teachers, hence you know how to evaluate work). If your supervising the work of another team, you're expected to be as critical as possible. Ask questions like "Is it clarified why this step is taken?" or "Why is this variable created? It's not used later." or more serious issues like, "The data frame is wrong, the second columns should've been inverted."   </p>
+<p>Let me make something clear, don't worry about the grades, it's all about producing good solutions. Try to produce your best work (with nice explanations to make the supervising team's life easy and to impress them) and as a supervisor team, try to give as much feedback as possible and improve the quality of the solution (which includes clarifying claims and correcting mistakes). </p>
+<table>
+<thead>
+<tr>
+<th align="right">Team number</th>
+<th align="left">Members of the team</th>
+<th align="center">Gives feedback to the team</th>
+<th align="center">Which HW problems to solve</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">Tatiana &amp; Emma</td>
+<td align="center">7</td>
+<td align="center">1, 5</td>
+</tr>
+<tr>
+<td align="right">2</td>
+<td align="left">Dekeiya &amp; Kristen</td>
+<td align="center">1</td>
+<td align="center">7, 6</td>
+</tr>
+<tr>
+<td align="right">3</td>
+<td align="left">Venus &amp; Hannah</td>
+<td align="center">2</td>
+<td align="center">2, 3</td>
+</tr>
+<tr>
+<td align="right">4</td>
+<td align="left">Fariha &amp; Mallory</td>
+<td align="center">3</td>
+<td align="center">4, 1</td>
+</tr>
+<tr>
+<td align="right">5</td>
+<td align="left">Deirdre &amp; Jasmine</td>
+<td align="center">4</td>
+<td align="center">5, 7</td>
+</tr>
+<tr>
+<td align="right">6</td>
+<td align="left">Sema &amp; Daniela</td>
+<td align="center">5</td>
+<td align="center">6, 2</td>
+</tr>
+<tr>
+<td align="right">7</td>
+<td align="left">Kate &amp; Ritchele</td>
+<td align="center">6</td>
+<td align="center">3, 4</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-R"># for those who are interested, this is how i randomized the hw assignments for each team
+set.seed(42) # setting a seed makes a randomization process reproducible
+problems &lt;- 1:7 # creates a vector (1,2,3,4,5,6,7) 
+problems_shuffled &lt;- sample(problems) # samples from problems vector, i.e. picks 7 numbers from problems randomly
+rep(problems_shuffled,2) # since there are 14 students and 7 problems, i duplicated the shuffled problem numbers
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>1</li><li>5</li><li>7</li><li>6</li><li>2</li><li>3</li><li>4</li><li>1</li><li>5</li><li>7</li><li>6</li><li>2</li><li>3</li><li>4</li></ol>
+
+<h3 id="due-dates">Due dates</h3>
+<ul>
+<li>Tuesday, June 14, 11:59pm: Finish your problems and send your solutions both to me and to a member of the supervisor team.</li>
+<li>Thursday, June 16, 11:59pm: Finish evaluating the other pair's solutions and send you feedback to me and back to a member of the other team.</li>
+</ul>
+<p>Let me give a few hypothetical examples (The teams and the problem assignments are accurate except the last example):<br />
+- Team 3 does problems 2 and 3. Team 4 supervises team 3. Venus does problem 2, Hannah does problem 3. They take a look at each other's solutions and make sure everything is right before sending them to the supervisor pair (which is team 4). Team 4 looks at the solutions and writes as feedback that one of the graphs doesn't look nice, because the horizontal values are not clear (maybe no labeling), questions the fact that it's not clear where the data comes from, comments that the results are not clearly written.</p>
+<ul>
+<li>
+<p>Team 7 does problems 3 and 4. Kate missed the relevant lectures, because she had to save someone in the school library who was having a heart attack. Ritchele being a great person does both of those problems and even explains her solutions to Kate. Kate brings the super expensive chocolate box she received from the person who she saved to Ritchele and lets her to take a few chocolate pieces. Team 1 (being the supervising team) writes the mean is used instead of the median even when the data is quite skew-symmetric and has outliers.</p>
+</li>
+<li>
+<p>Jack in team 12 hates this course. Mike in team 12 went for a vacation. They didn't do the homework. Beyonce and Sting in team 13 do the problems of team 12 because they are perfect. Team 13 gets highly deserved appreciation for that by me and the classmates, we applaud their diligent work in class.</p>
+</li>
+</ul>
+<h3 id="problems">Problems</h3>
+<ol>
+<li>
+<p>Pick any data set that comes with <code>R</code>, describe what the data set contains shortly. Pick a numerical column. Compute the mean and standard deviation of that column. Draw a bar graph/histogram for that column. Draw a bar graph that has only one bar located at the mean (of the chose column). Draw a bar chart that has two bars of height 0.5 located at "mean - standard deviation" and "mean + standard deviation".</p>
+</li>
+<li>
+<p>Either finish reading chapter 1 and pick an example we didn't discuss in class yet. Explain what makes that example interesting for you. And summarize/comment on the takeaways from that example. <br />
+Or pick any exercise at the end of chapter 1. Explain the question and your answer to someone who missed the first few lectures of our course.</p>
+</li>
+<li>
+<p>Create a data frame that contains some fake data: A question is asked twice to 20 people and the possible answers are 0, 1, 2, 3. Create two vectors that contain the answers of when the question asked the first time and when the question is asked the second time. Draw the results on two different bar charts. Then find out how to draw the bars together in one bar chart (google the phrase "stacked bar graph").</p>
+</li>
+<li>
+<p>Describe what the difference between a matrix and a data frame. Give an instructive example using numbers and text you pick. Do a few things with that matrix and the data frame (e.g. compute the mean of a column, display the first two rows etc.).</p>
+</li>
+<li>
+<p>Learn and explain how to import a (comma-seperated-values) <code>csv</code> file into a data frame in <code>R</code>. Find a csv file online (just google for csv example or look at this website: <a href="https://wsform.com/knowledgebase/sample-csv-files/">https://wsform.com/knowledgebase/sample-csv-files/</a>). Download the file to your computer. Then use <code>RStudio</code> to import the file.</p>
+</li>
+<li>
+<p>Explain shortly what Euclidean norm is and write a function that computes the Euclidean length (norm) of a vector (exc 1.10 in the textbook).</p>
+</li>
+<li>
+<p>~Explain the difference between bar plots and histograms. Give examples for each that illustrates the difference. You can pick columns from data sets that come with <code>R</code>, or go with numbers you arbitrarily pick.~ Nah, do exercise 1.14 in chapter 1 instead.</p>
+</li>
+</ol>
+<pre><code class="language-R">
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Syllabus" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Syllabus
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../intro_to_r/" class="md-footer__link md-footer__link--next" aria-label="Next: 00 - Intro to R" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              00 - Intro to R
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
