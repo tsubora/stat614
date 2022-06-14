@@ -590,10 +590,6 @@
 
   <h1>01 - Chapter 1</h1>
 
-<p>This is only a temporary page.
-I post the code snippets so that you don't have to type during the lecture.
-Simply copy and paste the code below to RStudio.
-In a few days, I'll add comments and turn this notebook to a proper webpage that contains the explanations, as well.</p>
 <h2 id="getting-started">Getting Started</h2>
 <p>We have seen most of the material below before. The examples below will provide good practice. Having written that, there are quite a number of new commands/ideas, as well. </p>
 <h3 id="example-1">Example 1</h3>
@@ -747,9 +743,9 @@ taller.won
 FALSE  TRUE 
    25    75
 </code></pre>
-<p><img alt="png" src="../output_6_6.png" /></p>
-<p><img alt="png" src="../output_6_7.png" /></p>
-<p><img alt="png" src="../output_6_8.png" /></p>
+<p><img alt="png" src="../output_5_6.png" /></p>
+<p><img alt="png" src="../output_5_7.png" /></p>
+<p><img alt="png" src="../output_5_8.png" /></p>
 <h3 id="example-3">Example 3</h3>
 <p>In this example, deaths of Prussian soldiers due to horsekicks are studied (I know, we may not be the target audience.)<br />
 Towards the end of the example, our data is compared to Poisson distribution, which models the probability of a given number of events occurring in a fixed interval of time, like what's the probability that your name is called a fixed number of times during a lecture. To learn more about Poisson distributions, you can take a look at the wikipedia page <a href="https://en.wikipedia.org/wiki/Poisson_distribution">https://en.wikipedia.org/wiki/Poisson_distribution</a> or these <a href="https://web.stanford.edu/~mrosenfe/soc_388_notes/PDF%20version%20of%20notes%20on%20different%20families%20of%20distributions.pdf">notes</a> for a somewhat intuitive description.</p>
@@ -780,8 +776,8 @@ r = sum(p * k)
 # i'll talk more about the variance and standard deviation in the class.
 v = sum(x * (k - r)^2) / 199
 </code></pre>
-<p><img alt="png" src="../output_8_0.png" /></p>
-<p><img alt="png" src="../output_8_1.png" /></p>
+<p><img alt="png" src="../output_7_0.png" /></p>
+<p><img alt="png" src="../output_7_1.png" /></p>
 <p>You may find the rest of the example a bit confusing. What's done below is:
 - First, using our sample mean, the probabilities are modeled using a Poisson distribution.<br />
 Why Poisson?<br />
@@ -973,8 +969,8 @@ curve(f(x,2,5), from=0, to=1)
 # if you like, you can label the x and y axes.
 curve(f(x,2,5), from=0, to=1, xlab=&quot;inputs&quot;, ylab='outputs')
 </code></pre>
-<p><img alt="png" src="../output_37_0.png" /></p>
-<p><img alt="png" src="../output_37_1.png" /></p>
+<p><img alt="png" src="../output_36_0.png" /></p>
+<p><img alt="png" src="../output_36_1.png" /></p>
 <h2 id="vectors-and-matrices">Vectors and Matrices</h2>
 <h3 id="example-8">Example 8</h3>
 <p>Below, we create a matrix that represents the class mobility of generations. The entry $P_{ij}$ (namely, the entry in row $i$, column $j$) represents the probability the child being in the class represented by column $j$, if the parents are in row $i$.</p>
@@ -1341,17 +1337,17 @@ USArrests$Murder
 hist(USArrests[, &quot;Murder&quot;])
 hist(USArrests$Murder)
 </code></pre>
-<p><img alt="png" src="../output_56_0.png" /></p>
-<p><img alt="png" src="../output_56_1.png" /></p>
+<p><img alt="png" src="../output_55_0.png" /></p>
+<p><img alt="png" src="../output_55_1.png" /></p>
 <pre><code class="language-R"># to create a probability (relative frequency) histogram
 
 library(MASS)
 truehist(USArrests$Murder)
 </code></pre>
-<p><img alt="png" src="../output_57_0.png" /></p>
+<p><img alt="png" src="../output_56_0.png" /></p>
 <pre><code class="language-R">hist(USArrests$Murder, prob=TRUE, breaks=&quot;scott&quot;)
 </code></pre>
-<p><img alt="png" src="../output_58_0.png" /></p>
+<p><img alt="png" src="../output_57_0.png" /></p>
 <pre><code class="language-R">USArrests$Murder
 </code></pre>
 <style>
@@ -1376,10 +1372,10 @@ detach(USArrests)
 <pre><code class="language-R">attach(USArrests)
 plot(UrbanPop, Murder)
 </code></pre>
-<p><img alt="png" src="../output_63_0.png" /></p>
+<p><img alt="png" src="../output_62_0.png" /></p>
 <pre><code class="language-R">pairs(USArrests)
 </code></pre>
-<p><img alt="png" src="../output_64_0.png" /></p>
+<p><img alt="png" src="../output_63_0.png" /></p>
 <pre><code class="language-R">cor(UrbanPop, Murder)
 </code></pre>
 <p>0.0695726217359934</p>
@@ -1399,7 +1395,22 @@ plot(UrbanPop, Murder)
 </table>
 
 <h2 id="importing-data">Importing Data</h2>
-<p>http://www.r-tutor.com/r-introduction/data-frame/data-import</p>
+<p>You can following tutorial for more detail:
+http://www.r-tutor.com/r-introduction/data-frame/data-import</p>
+<p>However, a quick way to import a csv file as a data frame in <code>RStudio</code> is as follows:
+1. Download and know where the csv file is.
+2. Use the <code>read.csv()</code> function, and put <code>file.choose()</code> as an argument. <code>RStudio</code> will open a window that will let you find the file you want to import.<br />
+If your csv file has headers, then please also put the argument <code>header=T</code> into the <code>read.csv()</code> function.</p>
+<pre><code class="language-R">data &lt;- read.csv(file.choose(), header=T)
+</code></pre>
+<p>The most common error is you obtain only one column. The reason is usually that you didn't choose the correct delimiter (what character seperates the values in a row).
+By looking at the data frame, you can find out what delimiter was to be used. The common choices are:
+- <code>','</code> (comma)
+- <code>';'</code> (semicolon)
+- <code>'\t'</code> (tab)</p>
+<pre><code class="language-R"># to import a csv file with header, where the values in a row are seperated by tab: 
+data = read.csv(file.choose(), sep='\t', header = T)
+</code></pre>
 
               
             </article>
