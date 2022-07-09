@@ -229,30 +229,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#homework-2-final-part-i-of-ii" class="md-nav__link">
+    Homework 2 (Final Part I of II)
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework 2 (Final Part I of II)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#instructions" class="md-nav__link">
     Instructions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#homework-2" class="md-nav__link">
-    Homework 2
-  </a>
-  
-    <nav class="md-nav" aria-label="Homework 2">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#teams" class="md-nav__link">
     Teams
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#due-dates" class="md-nav__link">
-    Due dates
   </a>
   
 </li>
@@ -285,7 +278,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#due-dates_1" class="md-nav__link">
+  <a href="#due-dates" class="md-nav__link">
     Due dates
   </a>
   
@@ -383,30 +376,23 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#homework-2-final-part-i-of-ii" class="md-nav__link">
+    Homework 2 (Final Part I of II)
+  </a>
+  
+    <nav class="md-nav" aria-label="Homework 2 (Final Part I of II)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#instructions" class="md-nav__link">
     Instructions
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#homework-2" class="md-nav__link">
-    Homework 2
-  </a>
-  
-    <nav class="md-nav" aria-label="Homework 2">
-      <ul class="md-nav__list">
         
           <li class="md-nav__item">
   <a href="#teams" class="md-nav__link">
     Teams
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#due-dates" class="md-nav__link">
-    Due dates
   </a>
   
 </li>
@@ -439,7 +425,7 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#due-dates_1" class="md-nav__link">
+  <a href="#due-dates" class="md-nav__link">
     Due dates
   </a>
   
@@ -472,88 +458,54 @@
 
 
 <h1 id="homework-assignments">Homework Assignments</h1>
-<h2 id="instructions">Instructions</h2>
-<p>Every week, you'll be paired up with another colleague of yours. And each pair has two tasks:
-- Do the assigned problems.
-- Give feedback to another pair (making corrections and asking for/suggesting clarifications and even suggesting a better approach).</p>
-<h2 id="homework-2">Homework 2</h2>
+<h2 id="homework-2-final-part-i-of-ii">Homework 2 (Final Part I of II)</h2>
+<h3 id="instructions">Instructions</h3>
+<p>You can work in pairs as listed below. One member of each team is to send their solutions (the <code>R</code> code, explanation and interpretation of the results) to me. Please send your solutions in a private chat and don't use the main chat.<br />
+<strong>Due time:</strong> Before 5pm on July 13.<br />
+<strong>During the first half of our lecture, we will compare and discuss your solutions in class.</strong></p>
 <h3 id="teams">Teams</h3>
 <table>
 <thead>
 <tr>
 <th align="center">Team number</th>
 <th align="left">Members of the team</th>
-<th align="center">Gives feedback to the team</th>
-<th align="center">Which HW problems to solve</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center">1</td>
 <td align="left">Tatiana &amp; Daniela</td>
-<td align="center">7</td>
-<td align="center">3, 5</td>
 </tr>
 <tr>
 <td align="center">2</td>
 <td align="left">Emma &amp; Kate</td>
-<td align="center">1</td>
-<td align="center">2, 1</td>
 </tr>
 <tr>
 <td align="center">3</td>
 <td align="left">Dekeiya &amp; Ritchele</td>
-<td align="center">2</td>
-<td align="center">6, 7</td>
 </tr>
 <tr>
 <td align="center">4</td>
 <td align="left">Kristen &amp; Mallory</td>
-<td align="center">3</td>
-<td align="center">4, 3</td>
 </tr>
 <tr>
 <td align="center">5</td>
 <td align="left">Venus &amp; Deirdre</td>
-<td align="center">4</td>
-<td align="center">5, 2</td>
 </tr>
 <tr>
 <td align="center">6</td>
 <td align="left">Hannah &amp; Jasmine</td>
-<td align="center">5</td>
-<td align="center">1, 6</td>
 </tr>
 <tr>
 <td align="center">7</td>
 <td align="left">Fariha &amp; Sema</td>
-<td align="center">6</td>
-<td align="center">7, 4</td>
 </tr>
 </tbody>
 </table>
-<pre><code class="language-R"># for those who are interested, this is how i randomized the hw assignments for each team
-
-set.seed(13) # setting a seed makes a randomization process reproducible
-
-problems &lt;- 1:7 # creates a vector (1,2,3,4,5,6,7) 
-
-problems_shuffled &lt;- sample(problems) # samples from problems vector, i.e. picks 7 numbers from problems randomly
-
-rep(problems_shuffled,2) # since there are 14 students and 7 problems, i duplicated the shuffled problem numbers
-</code></pre>
-<style>
-.list-inline {list-style: none; margin:0; padding: 0}
-.list-inline>li {display: inline-block}
-.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
-</style>
-<ol class=list-inline><li>3</li><li>5</li><li>2</li><li>1</li><li>6</li><li>7</li><li>4</li><li>3</li><li>5</li><li>2</li><li>1</li><li>6</li><li>7</li><li>4</li></ol>
-
-<h3 id="due-dates">Due dates</h3>
-<p>Tuesday, June 21, 11:59pm: Finish your problems and send your solutions both to me and to a member of the supervisor team.
-Thursday, June 23, 11:59pm: Finish evaluating the other pair's solutions and send you feedback to me and back to a member of the other team.</p>
 <h3 id="problems">Problems</h3>
-<p>To be announced.</p>
+<p>Problems 1, 2, 3 and 4 in Chapter 6 of our textbook, <code>R by Example</code>.
+You can find the data in the list: https://github.com/mariarizzo/RbyExample/tree/master/Rx-data<br />
+If you have difficulties importing the data, feel free to ask questions in the main chat.</p>
 <hr />
 <h2 id="homework-1">Homework 1</h2>
 <p>The purpose of this week's hw is to make sure the following arrangement works and you find ways to communicate (e.g. private Telegram chats).</p>
@@ -632,7 +584,7 @@ rep(problems_shuffled,2) # since there are 14 students and 7 problems, i duplica
 </style>
 <ol class=list-inline><li>1</li><li>5</li><li>7</li><li>6</li><li>2</li><li>3</li><li>4</li><li>1</li><li>5</li><li>7</li><li>6</li><li>2</li><li>3</li><li>4</li></ol>
 
-<h3 id="due-dates_1">Due dates</h3>
+<h3 id="due-dates">Due dates</h3>
 <ul>
 <li>Tuesday, June 14, 11:59pm: Finish your problems and send your solutions both to me and to a member of the supervisor team.</li>
 <li>Thursday, June 16, 11:59pm: Finish evaluating the other pair's solutions and send you feedback to me and back to a member of the other team.</li>
