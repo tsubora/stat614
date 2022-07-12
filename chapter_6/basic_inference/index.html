@@ -1,0 +1,1329 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.16">
+    
+    
+      
+        <title>06 - Chapter 6 - Stat 614 - Data Analysis Using Statistical Software</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.1c3799f8.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#chapter-6-basic-inference-methods" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Stat 614 - Data Analysis Using Statistical Software" class="md-header__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Stat 614 - Data Analysis Using Statistical Software
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              06 - Chapter 6
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Stat 614 - Data Analysis Using Statistical Software" class="md-nav__button md-logo" aria-label="Stat 614 - Data Analysis Using Statistical Software" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Stat 614 - Data Analysis Using Statistical Software
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Syllabus
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../homework/" class="md-nav__link">
+        Homework
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../intro_to_r/" class="md-nav__link">
+        00 - Intro to R
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_1_code_snippets/" class="md-nav__link">
+        01 - Chapter 1
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../chapter_2/quantitative/" class="md-nav__link">
+        02 - Chapter 2
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          06 - Chapter 6
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        06 - Chapter 6
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-about-a-proportion" class="md-nav__link">
+    Learning About a Proportion
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning About a Proportion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-sleeping-patterns-of-college-students" class="md-nav__link">
+    Example 1:  Sleeping patterns of college students
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1:  Sleeping patterns of college students">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hypothesis-tests" class="md-nav__link">
+    Hypothesis Tests:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-test-but-activating-the-correction-argument-of-proptest-wilson" class="md-nav__link">
+    Same test, but activating the correction argument of prop.test (Wilson)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-theoretical-probability-clopper-pearson" class="md-nav__link">
+    Using theoretical probability (Clopper-Pearson)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-agresti-coull-test" class="md-nav__link">
+    Using Agresti-Coull test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-about-a-mean" class="md-nav__link">
+    Learning About a Mean
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning About a Mean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-sample-t-statistic-methods" class="md-nav__link">
+    One-sample t statistic methods
+  </a>
+  
+    <nav class="md-nav" aria-label="One-sample t statistic methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digression-how-to-remove-values-from-a-vector" class="md-nav__link">
+    Digression: How to remove values from a vector:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digression-shapiro-wilk-test" class="md-nav__link">
+    Digression: Shapiro-Wilk Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonparametric-methods" class="md-nav__link">
+    Nonparametric methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-sample-inference" class="md-nav__link">
+    Two Sample Inference
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Sample Inference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-sample-t-test" class="md-nav__link">
+    Two sample t-test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-sample-mann-whitney-wilcoxon-test" class="md-nav__link">
+    Two sample Mann-Whitney-Wilcoxon test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permutation-test" class="md-nav__link">
+    Permutation test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paired-sample-inference-using-a-t-statistic" class="md-nav__link">
+    Paired Sample Inference Using a t Statistic
+  </a>
+  
+    <nav class="md-nav" aria-label="Paired Sample Inference Using a t Statistic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digression-finding-the-rows-in-which-na-values-exist" class="md-nav__link">
+    Digression: Finding the rows in which NA values exist.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-about-a-proportion" class="md-nav__link">
+    Learning About a Proportion
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning About a Proportion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1-sleeping-patterns-of-college-students" class="md-nav__link">
+    Example 1:  Sleeping patterns of college students
+  </a>
+  
+    <nav class="md-nav" aria-label="Example 1:  Sleeping patterns of college students">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hypothesis-tests" class="md-nav__link">
+    Hypothesis Tests:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#same-test-but-activating-the-correction-argument-of-proptest-wilson" class="md-nav__link">
+    Same test, but activating the correction argument of prop.test (Wilson)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-theoretical-probability-clopper-pearson" class="md-nav__link">
+    Using theoretical probability (Clopper-Pearson)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-agresti-coull-test" class="md-nav__link">
+    Using Agresti-Coull test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#learning-about-a-mean" class="md-nav__link">
+    Learning About a Mean
+  </a>
+  
+    <nav class="md-nav" aria-label="Learning About a Mean">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one-sample-t-statistic-methods" class="md-nav__link">
+    One-sample t statistic methods
+  </a>
+  
+    <nav class="md-nav" aria-label="One-sample t statistic methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digression-how-to-remove-values-from-a-vector" class="md-nav__link">
+    Digression: How to remove values from a vector:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#digression-shapiro-wilk-test" class="md-nav__link">
+    Digression: Shapiro-Wilk Test
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nonparametric-methods" class="md-nav__link">
+    Nonparametric methods
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-sample-inference" class="md-nav__link">
+    Two Sample Inference
+  </a>
+  
+    <nav class="md-nav" aria-label="Two Sample Inference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#two-sample-t-test" class="md-nav__link">
+    Two sample t-test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-sample-mann-whitney-wilcoxon-test" class="md-nav__link">
+    Two sample Mann-Whitney-Wilcoxon test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#permutation-test" class="md-nav__link">
+    Permutation test
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paired-sample-inference-using-a-t-statistic" class="md-nav__link">
+    Paired Sample Inference Using a t Statistic
+  </a>
+  
+    <nav class="md-nav" aria-label="Paired Sample Inference Using a t Statistic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#digression-finding-the-rows-in-which-na-values-exist" class="md-nav__link">
+    Digression: Finding the rows in which NA values exist.
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="chapter-6-basic-inference-methods">Chapter 6: Basic Inference Methods</h1>
+<h2 id="learning-about-a-proportion">Learning About a Proportion</h2>
+<p>A <strong>proportion</strong> in statistics is a fraction of the population (<em>population proportion</em>) or sample (<em>sample proportion</em>) that has a certain characteristic.<br />
+When we say the proportion of iPhones in the mobile phone market is 20%, then that means 20% of the mobile phones are iPhones and equivalently, we can also say that if you pick a random mobile phone, there is 20% probability that it is an iPhone.<br />
+Similarly, if there are 20 students in your classroom and 2 of them are failing your class, you can say that the sample proportion of passing the class is 90%.</p>
+<h3 id="example-1-sleeping-patterns-of-college-students">Example 1:  Sleeping patterns of college students</h3>
+<p><strong>Question:</strong> Is the median hours of sleep for the population of all students who take a particular class 9 hours?<br />
+<strong>Sample data:</strong> Sleeping times of 24 students who take that class.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Sleeping times of students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">7.75, 8.5, 8, 6, 8, 6.33, 8.17, 7.75, 7, 6.5, 8.75, 8, 7.5, 3, 6.25, 8.5, 9, 6.5, 9, 9.5, 9, 8, 8, 9.5</td>
+</tr>
+</tbody>
+</table>
+<p>We will do two smart things:
+1. Instead of asking if the median is 9 hours, we can equivalently ask if the proportion of students who sleep more than 9 hours is 50%.
+2. We will formulate our question in form of a hypothesis test.</p>
+<hr />
+<h4 id="hypothesis-tests">Hypothesis Tests:</h4>
+<p>A hypothesis is a claim about the value of a population characteristic. A hypothesis test is like a courtroom scene: </p>
+<table>
+<thead>
+<tr>
+<th align="left">Courtroom</th>
+<th align="left">Hypothesis Test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Initial assumption: The defendent is innocent. (It's the duty of the prosecutor to prove the defendent is guilty.)</td>
+<td align="left">The null hypothesis. (We assume some value for the population characteristic.)</td>
+</tr>
+<tr>
+<td align="left">The prosecutor tries to prove the defendant is guilty.</td>
+<td align="left">Alternative hypothesis. (We want to know if our sample statistic provides sufficiently strong evidence in some desired direction away from the null hypothesis value.)</td>
+</tr>
+<tr>
+<td align="left">Evidence.</td>
+<td align="left">Sample statistic(s).</td>
+</tr>
+<tr>
+<td align="left">Strong evidence.</td>
+<td align="left">Sample statistic is far (in the desired direction.)</td>
+</tr>
+<tr>
+<td align="left">Decision: Either the defendent is guilty or is not guilty. (There is no such decision stating the defendant is innocent.)</td>
+<td align="left">Conclusion of the test: Either the null hypothesis is rejected or the null hypothesis is failed to be rejected.</td>
+</tr>
+</tbody>
+</table>
+<p>One important remark is that in a court of law, the defendant is never found innocent. The prosecutor tries to prove the defendant is guilty by bringing some evidence. That evidence is discussed. If the evidence is weak, the defendant is found not guilty. If the evidence is strong, the defendant is found guilty.<br />
+Similarly, in a hypothesis test, we check if the sample statistic provides strong enough evidence for the alternate hypothesis. If the evidence is weak (sample statistic not far from the null hypothesis value), we <strong>fail to reject the null hypothesis</strong>. If the evidence is strong (sample statistic is far from the null hypothesis value in the desired direction), we <strong>reject the null hypothesis</strong>.</p>
+<p>There are two kind of errors that can happen.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Courtroom</th>
+<th align="left">Hypothesis test</th>
+<th align="left">Term</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">An innocent person is sentenced.</td>
+<td align="left">We reject a true null hypothesis.</td>
+<td align="left"><strong>Type I error</strong></td>
+</tr>
+<tr>
+<td align="left">A guilty person is not sentenced.</td>
+<td align="left">We fail to reject a false null hypothesis.</td>
+<td align="left"><strong>Type II error</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p>Back to our example.</p>
+<pre><code class="language-R">sleep = c(7.75, 8.5, 8, 6, 8, 6.33, 8.17, 7.75, 7, 6.5, 8.75, 8, 7.5, 3, 6.25, 8.5, 9, 6.5,
+            9, 9.5, 9, 8, 8, 9.5)
+</code></pre>
+<pre><code class="language-R">nine.hours = ifelse(sleep &gt;= 9, &quot;yes&quot;, &quot;no&quot;)
+</code></pre>
+<pre><code class="language-R">table(nine.hours)
+</code></pre>
+<pre><code>nine.hours
+ no yes 
+ 19   5
+</code></pre>
+<p>Our sample size is 24.
+$$n=24$$
+The null hypothesis is that the population proportion is 50%.
+$$\textrm{$H_0$: }p=0.5$$</p>
+<p>In a hypothesis test, we're both the judge and the prosecutor.<br />
+As a prosecutor, we're expected to give the details of our claim. Our claim by default is the null hypothesis is not true, but what is considered not true. There are three options we can choose from:<br />
+1. The population characteristic (in this example the population proportion) is greater than the hypothesized value (upper-tailed test):
+$$\textrm{H}<em>{\textrm{alt}:} p &gt; p_0$$
+where $p_0$ denotes the value we use in null-hypothesis.
+2. The population characteristic is less than the hypothesized value (lower-tailed test):
+$$\textrm{H}</em>{\textrm{alt}:} p &lt; p_0$$
+3. The population characteristic is different from the hypothesized value (two-tailed test):
+$$\textrm{H}_{\textrm{alt}:} p \neq p_0$$</p>
+<p>As a judge, we determine how extreme the sample proportion should be so that it counts as strong evidence. That threshold is quantified as $\alpha$. Commonly used values of $\alpha$ are 0.1, 0.05 and 0.01. We need to decide on the value of $\alpha$ before running the test.<br />
+$\alpha=0.05$ means, the sample statistic is considered sufficiently strong evidence for the alternative hypothesis if the sample </p>
+<p>Since we want to know if the median hours of sleep is different from 9 hours, we will say the our alternative hypothesis is that the population proportion is greater or less than 50%:<br />
+$$\textrm{$H_\textrm{alt}$: }p\neq0.5$$</p>
+<pre><code class="language-R">y = 5; n = 24
+Test = prop.test(y, n, p=0.5, alternative=&quot;two.sided&quot;, correct=FALSE)
+</code></pre>
+<pre><code class="language-R">Test
+</code></pre>
+<pre><code>    1-sample proportions test without continuity correction
+
+data:  y out of n, null probability 0.5
+X-squared = 8.1667, df = 1, p-value = 0.004267
+alternative hypothesis: true p is not equal to 0.5
+95 percent confidence interval:
+ 0.09244825 0.40470453
+sample estimates:
+        p 
+0.2083333
+</code></pre>
+<p>Based on the $P$-value we obtain (which measures how far our sample proportion is from the hypothesized population proportion), we reject the nullhypothesis.</p>
+<pre><code class="language-R">Test$p.value
+</code></pre>
+<p>0.00426672482217614</p>
+<p>Note that our $P$ value $\approx 0.0043$ is (much) less than $\alpha=5\%$. That means our sample proportion is quite extreme according to the null hypothesis. Our conclusion will be that the null hypothesis seems not to be true and we reject the null hypothesis.</p>
+<p>Based on our sample proportion $\frac{5}{24}=\approx 20.8\%$, the population proportion should be in the following confidence interval with a confidence level of $95\%$:</p>
+<pre><code class="language-R">Test$conf.int
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.0924482535285185</li><li>0.404704532531887</li></ol>
+
+<p>In other words, if we assume that 95% of all samples are to be considered not extreme, and our sample is one of those not extreme examples, the population proportion should be in the interval $(0.092,0.405)$.</p>
+<hr />
+<p><em>Our sample is a bit problematic: Our sample size is not that big (we don't know if the sample proportions are distributed normally). So, we can't fully rely on the assumption that $\hat{p}$'s are distributed normally. Which is why our textbook offers some other tests (which we will not discuss in detail, just know that they exist and know where to find them and how to use them), and we will pick the most conservative result.</em></p>
+<h4 id="same-test-but-activating-the-correction-argument-of-proptest-wilson">Same test, but activating the correction argument of <code>prop.test</code> (Wilson)</h4>
+<pre><code class="language-R">Test.adj = prop.test(y,n,p=0.5, alternative=&quot;two.sided&quot;, correct=TRUE)
+</code></pre>
+<pre><code class="language-R">Test.adj$p.value
+</code></pre>
+<p>0.00796348920654999</p>
+<pre><code class="language-R">Test.adj$conf.int
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.0793597153947196</li><li>0.427065000253439</li></ol>
+
+<h4 id="using-theoretical-probability-clopper-pearson">Using theoretical probability (Clopper-Pearson)</h4>
+<p>The areas of the bars in a binomial distribution can be computed using probability. In this approach, we assume our data set approximately follows a binomial distribution.
+We mentioned binomial distributions last week when talking about the central limit theorem.<br />
+You can read more on those distributions on this page: <a href="https://r-coder.com/binomial-distribution-r/">https://r-coder.com/binomial-distribution-r/</a>.</p>
+<pre><code class="language-R">Test.exact = binom.test(y,n,p=0.5)
+</code></pre>
+<pre><code class="language-R">Test.exact$p.value
+</code></pre>
+<p>0.00661075115203857</p>
+<pre><code class="language-R">Test.exact$conf.int
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.0713186171980549</li><li>0.421512843637253</li></ol>
+
+<h4 id="using-agresti-coull-test">Using Agresti-Coull test</h4>
+<p>This is another popular "small-sample" method. We simply modify our dataset by artificially adding two successes and two failures. <code>R</code> doesn't have an implemented Agresti-Coull test, but  we can write it as a function ourselves quite easily:</p>
+<pre><code class="language-R">agresti.interval = function(y, n, conf=0.95){
+n1 = n + 4
+y1 = y + 2
+phat = y1 / n1
+me = qnorm(1 - (1 - conf) / 2) * sqrt(phat * (1 - phat) / n1)
+c(phat - me, phat + me)
+}
+</code></pre>
+<pre><code class="language-R">agresti.interval(y, n)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.0896127978831776</li><li>0.410387202116822</li></ol>
+
+<p>Now that we have computed 95% confidence intervals in three different ways, we can pick the most conservative one:</p>
+<pre><code class="language-R">cnames = c(&quot;Wilson Score Interval&quot;, &quot;Clopper-Pearson&quot;,&quot;Agresti-Coull&quot;)
+cfunctions = c(&quot;prop.test&quot;, &quot;binom.test&quot;, &quot;agresti.interval&quot;)
+intervals = rbind(Test$conf.int, Test.exact$conf.int,agresti.interval(y, n))
+data.frame(Name=cnames, Function=cfunctions,LO=intervals[ , 1], HI=intervals[ , 2])
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 3 × 4</caption>
+<thead>
+    <tr><th scope=col>Name</th><th scope=col>Function</th><th scope=col>LO</th><th scope=col>HI</th></tr>
+    <tr><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><td>Wilson Score Interval</td><td>prop.test       </td><td>0.09244825</td><td>0.4047045</td></tr>
+    <tr><td>Clopper-Pearson      </td><td>binom.test      </td><td>0.07131862</td><td>0.4215128</td></tr>
+    <tr><td>Agresti-Coull        </td><td>agresti.interval</td><td>0.08961280</td><td>0.4103872</td></tr>
+</tbody>
+</table>
+
+<p>The most conservative confidence interval is the longest one (in this example, the Clopper-Pearson test). If the interval lengths are very different, more thought is to be given to which interval to choose. In our example, they are quite similar. What's really important is that we go far enough to guarantee that 95% of the sample means is covered about the population mean (at most half the length of our interval away).</p>
+<h2 id="learning-about-a-mean">Learning About a Mean</h2>
+<p>In the previous discussion, we did two things:
+1. We tested if our sample proportion $\hat{p}$ is far from a hypothesized population proportion (hypothesis test for population proportion).<br />
+2. Where would be the population proportion based on our sample proportion (confidence interval).</p>
+<h3 id="one-sample-t-statistic-methods">One-sample t statistic methods</h3>
+<p>We can play the same game for the sample mean $\bar{x}$.<br />
+Remember that the sample means are also distributed normally with mean $\mu_{\bar{x}}$ equal to the population mean $\mu_x$.</p>
+<p>$$\textrm{$H_0$: }\mu=8$$
+$$n=24$$
+$$\alpha=0.1$$</p>
+<p>Strictly speaking, we shouldn't really assume that the mean sleeping times are normally distributed, hence that $n$ is not large enough (&gt;30).<br />
+(Note that if the population data itself is normally distributed, then $n$ doesn't need to be large, the sample means would be distributed normally even when the sample size is small.)<br />
+How do we check if our sample data comes from a data set that is normally distributed?<br />
+One way is doing by hand:
+To check if our data is normally distributed, we can look at the histogram of sample data, and we can compare the quartiles of a normal distribution with the quartiles of our sample data. A sample that is chosen from a normal distribution is expected to be more or less normally distributed itself. </p>
+<pre><code class="language-R">sleep
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>7.75</li><li>8.5</li><li>8</li><li>6</li><li>8</li><li>6.33</li><li>8.17</li><li>7.75</li><li>7</li><li>6.5</li><li>8.75</li><li>8</li><li>7.5</li><li>3</li><li>6.25</li><li>8.5</li><li>9</li><li>6.5</li><li>9</li><li>9.5</li><li>9</li><li>8</li><li>8</li><li>9.5</li></ol>
+
+<pre><code class="language-R">hist(sleep,prob=TRUE)
+</code></pre>
+<p><img alt="png" src="../output_53_0.png" /></p>
+<p>One visual way to check if the sample data seems to come from a normal distribution is checking its histogram. The histogram in this example has a problematic bar (rightmost).  </p>
+<p>A more grounded way of checking if our sample data is close to a normal distribution is to break the area under the normal curve into 24 equal regions bounded by the x-axis below, normal distribution above and two consecutive horizontal cuts.</p>
+<p>Then we compare those cuts with our sample data. If those cut values are similar to our sample data, then our 24 values seem to be distributed more or less normally and we can conclude $n$ doesn't need to be large to apply the t-test.</p>
+<pre><code class="language-R"># cuts of normal distribution
+ppoints(sleep)
+</code></pre>
+<style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>0.0208333333333333</li><li>0.0625</li><li>0.104166666666667</li><li>0.145833333333333</li><li>0.1875</li><li>0.229166666666667</li><li>0.270833333333333</li><li>0.3125</li><li>0.354166666666667</li><li>0.395833333333333</li><li>0.4375</li><li>0.479166666666667</li><li>0.520833333333333</li><li>0.5625</li><li>0.604166666666667</li><li>0.645833333333333</li><li>0.6875</li><li>0.729166666666667</li><li>0.770833333333333</li><li>0.8125</li><li>0.854166666666667</li><li>0.895833333333333</li><li>0.9375</li><li>0.979166666666667</li></ol>
+
+<pre><code class="language-R">qqnorm(sleep) # produces a normal probability plot of the times
+qqline(sleep) # overlays a line on the plot passing through the first and third quartiles
+</code></pre>
+<p><img alt="png" src="../output_58_0.png" /></p>
+<p>For more about Q-Q plots, you can read:<br />
+https://data.library.virginia.edu/understanding-q-q-plots/</p>
+<p>Note that the point in the bottom left corner is super weird. We can detect the location of that outlier from the raw data or visually using the <code>plot()</code> function:</p>
+<pre><code class="language-R">plot(sleep)
+</code></pre>
+<p><img alt="png" src="../output_61_0.png" /></p>
+<p>The sleep time of the outlier seems to be 3. So, let's find the index of that value in the <code>sleep</code> vector:</p>
+<pre><code class="language-R">min(sleep)
+</code></pre>
+<p>3</p>
+<p>That value is 3 indeed. Now, let's locate the position of the value 3 in the <code>sleep</code> vector:</p>
+<pre><code class="language-R">which(sleep&lt;3.5)
+</code></pre>
+<p>14</p>
+<pre><code class="language-R"># double checking if the 14th term of the sleep vector is 3.
+sleep[14]
+</code></pre>
+<p>3</p>
+<p>One way to deal with that outlier is to simply ignore it.</p>
+<pre><code class="language-R"># -14 inside the square brackets drops the term in the 14th position 
+sleep.new = sleep[-14]
+</code></pre>
+<hr />
+<h4 id="digression-how-to-remove-values-from-a-vector">Digression: How to remove values from a vector:</h4>
+<p>https://www.statology.org/remove-element-from-vector-r/</p>
+<hr />
+<h4 id="digression-shapiro-wilk-test">Digression: Shapiro-Wilk Test</h4>
+<p>There is actually a statistical test that measures normality of the population distribution based on the sample data.</p>
+<pre><code class="language-R">shapiro.test(sleep)
+</code></pre>
+<pre><code>    Shapiro-Wilk normality test
+
+data:  sleep
+W = 0.87238, p-value = 0.005858
+</code></pre>
+<p>The p-value is much less than $\alpha=0.05$, so we cannot assume that the sample data comes from a normally distributed population. And for that reason, t-test may not be accurate.</p>
+<p>To read more about the Shapiro-Wilk test: <a href="https://www.statology.org/shapiro-wilk-test-r/">https://www.statology.org/shapiro-wilk-test-r/</a></p>
+<hr />
+<p>Now that the outlier is removed, we can run a <em>t-test</em>:</p>
+<pre><code class="language-R">t.test(sleep.new, mu=8, conf.level=0.90)
+</code></pre>
+<pre><code>    One Sample t-test
+
+data:  sleep.new
+t = -0.49862, df = 22, p-value = 0.623
+alternative hypothesis: true mean is not equal to 8
+90 percent confidence interval:
+ 7.516975 8.265633
+sample estimates:
+mean of x 
+ 7.891304
+</code></pre>
+<p>The p-value $\approx0.623&gt;0.1=\alpha$. Hence, we fail to reject the null hypothesis that the population mean of sleeping times is 8 hours.</p>
+<p>In addition, we can give a 90% confidence interval for the population mean: (7.51,8.27). Note that, we round down the lower end value and round up the upper end value to make sure to contain 90% of the samples near the population mean.</p>
+<h3 id="nonparametric-methods">Nonparametric methods</h3>
+<p>Nonparametric tests don't assume anything about the underlying distribution unlike the t-test we ran above.</p>
+<p>A popular one-sample nonparametric test is the Wilcoxon signed rank method for the median (not the mean).<br />
+Our $\textrm{H}_0$ is the median $M=8$. We will have a two-sided alternative and obtain a 90% interval estimate for the median of sleeping times using the following command:</p>
+<pre><code class="language-R">W = wilcox.test(sleep, mu=8, conf.int=TRUE, conf.level=0.90)
+</code></pre>
+<pre><code>Warning message in wilcox.test.default(sleep, mu = 8, conf.int = TRUE, conf.level = 0.9):
+“cannot compute exact p-value with ties”
+Warning message in wilcox.test.default(sleep, mu = 8, conf.int = TRUE, conf.level = 0.9):
+“cannot compute exact confidence interval with ties”
+Warning message in wilcox.test.default(sleep, mu = 8, conf.int = TRUE, conf.level = 0.9):
+“cannot compute exact p-value with zeroes”
+Warning message in wilcox.test.default(sleep, mu = 8, conf.int = TRUE, conf.level = 0.9):
+“cannot compute exact confidence interval with zeroes”
+</code></pre>
+<p>Since this test uses rankings, if the data set has equal values multiple times, the command gives a warning. But it's fine, a warning message is not the same as an error message.</p>
+<pre><code class="language-R">W
+</code></pre>
+<pre><code>    Wilcoxon signed rank test with continuity correction
+
+data:  sleep
+V = 73.5, p-value = 0.3969
+alternative hypothesis: true location is not equal to 8
+90 percent confidence interval:
+ 7.124979 8.374997
+sample estimates:
+(pseudo)median 
+      7.749961
+</code></pre>
+<p>If you're interested in learning more about how this test is run, you can watch this nice example: <a href="https://www.youtube.com/watch?v=TqCg2tb4wJ0">https://www.youtube.com/watch?v=TqCg2tb4wJ0</a></p>
+<p>This test also indicates that there is insufficient evidence that the "average" (in the latter case, we tested the median!) sleeping time from the population is not 8 hours. We fail to reject the null hypothesis.</p>
+<h2 id="two-sample-inference">Two Sample Inference</h2>
+<p>This time, we're comparing means of two different samples. We will use the twin data set from Ashenfelter and Krueger (for the details, check the textbook and look at <a href="https://www.researchgate.net/publication/4901303_What_Do_Twins_Studies_Reveal_About_the_Economic_Returns_to_Education_A_Comparison_of_Australian_and_US_Findings">What Do Twins Studies Reveal About the Economic Returns to Education?</a></p>
+<pre><code class="language-R">twins = read.table(&quot;https://raw.githubusercontent.com/mariarizzo/RbyExample/master/Rx-data/twins.txt&quot;, header=TRUE, sep=',')
+</code></pre>
+<pre><code class="language-R">head(twins)
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 6 × 16</caption>
+<thead>
+    <tr><th></th><th scope=col>DLHRWAGE</th><th scope=col>DEDUC1</th><th scope=col>AGE</th><th scope=col>AGESQ</th><th scope=col>HRWAGEH</th><th scope=col>WHITEH</th><th scope=col>MALEH</th><th scope=col>EDUCH</th><th scope=col>HRWAGEL</th><th scope=col>WHITEL</th><th scope=col>MALEL</th><th scope=col>EDUCL</th><th scope=col>DEDUC2</th><th scope=col>DTEN</th><th scope=col>DMARRIED</th><th scope=col>DUNCOV</th></tr>
+    <tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>1</th><td>0.2593466   </td><td> 0</td><td>33.25120</td><td>1105.6422</td><td>11.25 </td><td>1</td><td>0</td><td>16</td><td>8.68 </td><td>1</td><td>0</td><td>16</td><td> 0</td><td>1.333</td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>2</th><td>.           </td><td>-1</td><td>54.05339</td><td>2921.7688</td><td>.     </td><td>1</td><td>0</td><td> 9</td><td>7.85 </td><td>1</td><td>0</td><td>10</td><td> 1</td><td>8    </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>3</th><td>0.721318058 </td><td> 7</td><td>43.57016</td><td>1898.3586</td><td>18    </td><td>1</td><td>0</td><td>19</td><td>8.75 </td><td>1</td><td>0</td><td>12</td><td> 4</td><td>3    </td><td>-1</td><td> 0</td></tr>
+    <tr><th scope=row>4</th><td>0.011581964 </td><td> 0</td><td>30.96783</td><td> 959.0065</td><td>16.5  </td><td>1</td><td>1</td><td>12</td><td>16.31</td><td>1</td><td>1</td><td>12</td><td> 0</td><td>-2   </td><td> 0</td><td> 1</td></tr>
+    <tr><th scope=row>5</th><td>-0.560984677</td><td> 0</td><td>34.63381</td><td>1199.5010</td><td>9.6154</td><td>1</td><td>1</td><td>14</td><td>16.85</td><td>1</td><td>1</td><td>14</td><td> 1</td><td>2.917</td><td> 0</td><td>-1</td></tr>
+    <tr><th scope=row>6</th><td>.           </td><td> 2</td><td>71.60301</td><td>5126.9913</td><td>.     </td><td>1</td><td>0</td><td>16</td><td>.    </td><td>1</td><td>0</td><td>14</td><td>-2</td><td>24   </td><td> 1</td><td> 0</td></tr>
+</tbody>
+</table>
+
+<p>The variable <code>HRWAGEH</code> is the hourly wage for twin 2.</p>
+<pre><code class="language-R">twins$HRWAGEH = as.numeric(twins$HRWAGEH)
+</code></pre>
+<pre><code>Warning message in eval(expr, envir, enclos):
+“NAs introduced by coercion”
+</code></pre>
+<pre><code class="language-R">hist(twins$HRWAGEH)
+</code></pre>
+<p><img alt="png" src="../output_96_0.png" /></p>
+<p>Note that this data is strongly right-skewed.</p>
+<pre><code class="language-R">log.wages = log(twins$HRWAGEH)
+</code></pre>
+<pre><code class="language-R">hist(log.wages)
+</code></pre>
+<p><img alt="png" src="../output_99_0.png" /></p>
+<p>By taking the logarithm, we removed the skew.</p>
+<p>There are two kinds of two sample tests:<br />
+1. When you have two independent samples.
+2. When you have two measurements for the same individuals (paired test, think of it as before/after).  </p>
+<p>We begin with the first kind.</p>
+<h3 id="two-sample-t-test">Two sample t-test</h3>
+<p>We first create our two samples as two different subsets of the participants of the <code>twins</code> dataset.</p>
+<pre><code class="language-R">twins$EDUCH = as.numeric(twins$EDUCH)
+</code></pre>
+<pre><code class="language-R">college = ifelse(twins$EDUCH &gt; 12, &quot;yes&quot;, &quot;no&quot;)
+</code></pre>
+<pre><code class="language-R">table(college)
+</code></pre>
+<pre><code>college
+ no yes 
+ 71 112
+</code></pre>
+<p>Sample 1: The ones who didn't go to college (high school).<br />
+Sample 2: The ones who went to college.</p>
+<p>We will compare the average wages (to be more precise: the log wages) of those two groups.</p>
+<pre><code class="language-R">boxplot(log.wages ~ college, horizontal=TRUE,
+        names=c(&quot;High School&quot;, &quot;Some College&quot;), xlab=&quot;log Wage&quot;)
+</code></pre>
+<p><img alt="png" src="../output_109_0.png" /></p>
+<p>Let $\mu_H$ and $\mu_C$ denote respectively the mean log wage of the population of high school and college graduates.</p>
+<p>Null hypothesis $\textrm{H}<em>0$: $\mu_H = \mu_H$<br />
+Alternative hypothesis $\textrm{H}</em>\textrm{alt}$: $\mu_H \neq \mu_H$<br />
+$\alpha=0.05$</p>
+<p>Actually, there are two tests which work very similar:<br />
+The Welch test and the traditional t-test.<br />
+The Welch test doesn't assume the variances of the two populations are different. The traditional t-test assumes the variances of the two populations are equal.<br />
+The default implementation of the command <code>t.test()</code> in <code>R</code> is the Welch test.</p>
+<pre><code class="language-R"># remember, default argument for alternative is two-sided
+# default value for alpha is 0.05
+t.test(log.wages ~ college)
+</code></pre>
+<pre><code>    Welch Two Sample t-test
+
+data:  log.wages by college
+t = -2.4545, df = 131.24, p-value = 0.01542
+alternative hypothesis: true difference in means between group no and group yes is not equal to 0
+95 percent confidence interval:
+ -0.42999633 -0.04620214
+sample estimates:
+ mean in group no mean in group yes 
+         2.282119          2.520218
+</code></pre>
+<p>The (two sided) p-value is 0.015 which is much smaller than $\alpha=0.05$.<br />
+Hence we can reject the null hypothesis that the college graduates and high school graduates have the same average (log) wages.</p>
+<p>In a scenario, where it makes sense to assume the variances of the two populations are equal, you can also use the traditional t-test by adding the argument <code>var.equal=TRUE</code> (default value is FALSE).</p>
+<pre><code class="language-R">t.test(log.wages ~ college, var.equal=TRUE)
+</code></pre>
+<pre><code>    Two Sample t-test
+
+data:  log.wages by college
+t = -2.3683, df = 159, p-value = 0.01907
+alternative hypothesis: true difference in means between group no and group yes is not equal to 0
+95 percent confidence interval:
+ -0.43665519 -0.03954328
+sample estimates:
+ mean in group no mean in group yes 
+         2.282119          2.520218
+</code></pre>
+<h3 id="two-sample-mann-whitney-wilcoxon-test">Two sample Mann-Whitney-Wilcoxon test</h3>
+<p>This is a nonparametric alternative to the two-sample test we saw above.</p>
+<pre><code class="language-R">wilcox.test(log.wages ~ college, conf.int=TRUE)
+</code></pre>
+<pre><code>    Wilcoxon rank sum test with continuity correction
+
+data:  log.wages by college
+W = 2264, p-value = 0.01093
+alternative hypothesis: true location shift is not equal to 0
+95 percent confidence interval:
+ -0.44266384 -0.06455011
+sample estimates:
+difference in location 
+            -0.2575775
+</code></pre>
+<p>W denotes the number of pairs $(x_i,y_j)$ where $x_i&gt;y_j$, for $x$ and $y$ coming from sample 1 and sample 2, respectively.</p>
+<p>Note that the results of both tests are similar.</p>
+<hr />
+<h3 id="permutation-test">Permutation test</h3>
+<p>Please read from the textbook. It's a fun test.</p>
+<hr />
+<h3 id="paired-sample-inference-using-a-t-statistic">Paired Sample Inference Using a t Statistic</h3>
+<p>This time we will pair the indiviuals in the samples. In other words, for every individual in sample 1, there will be exactly one individual in sample 2.<br />
+This test usually is applied to test the effect of a drug or an educational method to compare the before and after measurements of the same people. Here, we will be matching up twins.</p>
+<p>In the above example, we saw that the education level seem to be related to the wages. However, maybe it's not the education level alone, but there are some confounding variables which effect both the education level and the wages.</p>
+<p>To rule cancel out the effect of possible confounding variables, this time we will pick the twins for which the education levels of twin 1 (<code>EDUCL</code>) and twin 2 (<code>EDUCH</code>) are different:</p>
+<pre><code class="language-R">twins$EDUCL = as.numeric(twins$EDUCL)
+twins$HRWAGEL = as.numeric(twins$HRWAGEL)
+twins$HRWAGEH = as.numeric(twins$HRWAGEH)
+</code></pre>
+<pre><code class="language-R">twins.diff = subset(twins, EDUCH != EDUCL)
+</code></pre>
+<pre><code class="language-R"># number of rows
+nrow(twins.diff)
+</code></pre>
+<p>94</p>
+<p>There are 94 such twins.</p>
+<pre><code class="language-R">any(is.na(twins.diff))
+</code></pre>
+<p>TRUE</p>
+<p>There seem to be some NA values in our dataframe.</p>
+<hr />
+<h4 id="digression-finding-the-rows-in-which-na-values-exist">Digression: Finding the rows in which NA values exist.</h4>
+<pre><code class="language-R">na_cells = which(is.na(twins.diff), arr.ind=TRUE)
+# list the cells whose values are na
+na_cells
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 23 × 2 of type int</caption>
+<thead>
+    <tr><th></th><th scope=col>row</th><th scope=col>col</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>2</th><td> 1</td><td>5</td></tr>
+    <tr><th scope=row>6</th><td> 3</td><td>5</td></tr>
+    <tr><th scope=row>13</th><td> 8</td><td>5</td></tr>
+    <tr><th scope=row>16</th><td>11</td><td>5</td></tr>
+    <tr><th scope=row>79</th><td>40</td><td>5</td></tr>
+    <tr><th scope=row>101</th><td>50</td><td>5</td></tr>
+    <tr><th scope=row>113</th><td>56</td><td>5</td></tr>
+    <tr><th scope=row>137</th><td>70</td><td>5</td></tr>
+    <tr><th scope=row>150</th><td>78</td><td>5</td></tr>
+    <tr><th scope=row>163</th><td>84</td><td>5</td></tr>
+    <tr><th scope=row>6</th><td> 3</td><td>9</td></tr>
+    <tr><th scope=row>8</th><td> 5</td><td>9</td></tr>
+    <tr><th scope=row>16</th><td>11</td><td>9</td></tr>
+    <tr><th scope=row>18</th><td>12</td><td>9</td></tr>
+    <tr><th scope=row>25</th><td>17</td><td>9</td></tr>
+    <tr><th scope=row>76</th><td>38</td><td>9</td></tr>
+    <tr><th scope=row>79</th><td>40</td><td>9</td></tr>
+    <tr><th scope=row>91</th><td>44</td><td>9</td></tr>
+    <tr><th scope=row>113</th><td>56</td><td>9</td></tr>
+    <tr><th scope=row>119</th><td>61</td><td>9</td></tr>
+    <tr><th scope=row>150</th><td>78</td><td>9</td></tr>
+    <tr><th scope=row>160</th><td>82</td><td>9</td></tr>
+    <tr><th scope=row>166</th><td>86</td><td>9</td></tr>
+</tbody>
+</table>
+
+<pre><code class="language-R"># list the rows of the dataframe that contain NA cells
+na_rows = as.numeric(rownames(na_cells))
+twins[na_rows,]
+</code></pre>
+<table class="dataframe">
+<caption>A data.frame: 23 × 16</caption>
+<thead>
+    <tr><th></th><th scope=col>DLHRWAGE</th><th scope=col>DEDUC1</th><th scope=col>AGE</th><th scope=col>AGESQ</th><th scope=col>HRWAGEH</th><th scope=col>WHITEH</th><th scope=col>MALEH</th><th scope=col>EDUCH</th><th scope=col>HRWAGEL</th><th scope=col>WHITEL</th><th scope=col>MALEL</th><th scope=col>EDUCL</th><th scope=col>DEDUC2</th><th scope=col>DTEN</th><th scope=col>DMARRIED</th><th scope=col>DUNCOV</th></tr>
+    <tr><th></th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th></tr>
+</thead>
+<tbody>
+    <tr><th scope=row>2</th><td>.</td><td>-1</td><td>54.05339</td><td>2921.7688</td><td>       NA</td><td>1</td><td>0</td><td> 9</td><td> 7.850000</td><td>1</td><td>0</td><td>10</td><td> 1</td><td>8    </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>6</th><td>.</td><td> 2</td><td>71.60301</td><td>5126.9913</td><td>       NA</td><td>1</td><td>0</td><td>16</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td>-2</td><td>24   </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>13</th><td>.</td><td> 4</td><td>32.08214</td><td>1029.2634</td><td>       NA</td><td>1</td><td>0</td><td>16</td><td>31.250000</td><td>1</td><td>0</td><td>12</td><td> 4</td><td>-9.5 </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>16</th><td>.</td><td> 4</td><td>36.04107</td><td>1298.9586</td><td>       NA</td><td>1</td><td>0</td><td>18</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td> 4</td><td>.    </td><td>-1</td><td> 0</td></tr>
+    <tr><th scope=row>79</th><td>.</td><td> 2</td><td>40.86242</td><td>1669.7376</td><td>       NA</td><td>1</td><td>0</td><td>16</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td>-1</td><td>-0.5 </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>101</th><td>.</td><td>-4</td><td>62.57906</td><td>3916.1382</td><td>       NA</td><td>0</td><td>1</td><td>12</td><td>12.000000</td><td>0</td><td>1</td><td>16</td><td> 0</td><td>-7.75</td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>113</th><td>.</td><td> 1</td><td>78.64203</td><td>6184.5683</td><td>       NA</td><td>1</td><td>1</td><td>13</td><td>       NA</td><td>1</td><td>1</td><td>12</td><td>-1</td><td>15   </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>137</th><td>.</td><td> 5</td><td>27.94798</td><td> 781.0896</td><td>       NA</td><td>1</td><td>0</td><td>18</td><td> 5.395161</td><td>1</td><td>0</td><td>13</td><td> 3</td><td>0.334</td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>150</th><td>.</td><td>-1</td><td>64.45996</td><td>4155.0863</td><td>       NA</td><td>0</td><td>0</td><td>11</td><td>       NA</td><td>0</td><td>0</td><td>12</td><td> 1</td><td>-21  </td><td> 1</td><td> 1</td></tr>
+    <tr><th scope=row>163</th><td>.</td><td>-1</td><td>70.60096</td><td>4984.4953</td><td>       NA</td><td>1</td><td>1</td><td>12</td><td> 6.868095</td><td>1</td><td>1</td><td>13</td><td> 0</td><td>13   </td><td> 0</td><td>-1</td></tr>
+    <tr><th scope=row>6.1</th><td>.</td><td> 2</td><td>71.60301</td><td>5126.9913</td><td>       NA</td><td>1</td><td>0</td><td>16</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td>-2</td><td>24   </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>8</th><td>.</td><td>-1</td><td>61.45106</td><td>3776.2329</td><td>35.000000</td><td>1</td><td>0</td><td>13</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td>-2</td><td>25.5 </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>16.1</th><td>.</td><td> 4</td><td>36.04107</td><td>1298.9586</td><td>       NA</td><td>1</td><td>0</td><td>18</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td> 4</td><td>.    </td><td>-1</td><td> 0</td></tr>
+    <tr><th scope=row>18</th><td>.</td><td> 1</td><td>24.54483</td><td> 602.4488</td><td> 5.250000</td><td>1</td><td>1</td><td>13</td><td>       NA</td><td>1</td><td>1</td><td>12</td><td> 0</td><td>.    </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>25</th><td>.</td><td> 1</td><td>28.90075</td><td> 835.2535</td><td> 8.583333</td><td>1</td><td>1</td><td>15</td><td>       NA</td><td>1</td><td>1</td><td>14</td><td>-1</td><td>0    </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>76</th><td>.</td><td> 1</td><td>27.13484</td><td> 736.2995</td><td>23.750000</td><td>1</td><td>0</td><td>20</td><td>       NA</td><td>1</td><td>0</td><td>19</td><td> 3</td><td>3    </td><td> 0</td><td> 1</td></tr>
+    <tr><th scope=row>79.1</th><td>.</td><td> 2</td><td>40.86242</td><td>1669.7376</td><td>       NA</td><td>1</td><td>0</td><td>16</td><td>       NA</td><td>1</td><td>0</td><td>14</td><td>-1</td><td>-0.5 </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>91</th><td>.</td><td>-2</td><td>55.91239</td><td>3126.1952</td><td>20.000000</td><td>1</td><td>1</td><td>12</td><td>       NA</td><td>1</td><td>1</td><td>14</td><td>-1</td><td>29   </td><td> 0</td><td> 1</td></tr>
+    <tr><th scope=row>113.1</th><td>.</td><td> 1</td><td>78.64203</td><td>6184.5683</td><td>       NA</td><td>1</td><td>1</td><td>13</td><td>       NA</td><td>1</td><td>1</td><td>12</td><td>-1</td><td>15   </td><td> 1</td><td> 0</td></tr>
+    <tr><th scope=row>119</th><td>.</td><td> 1</td><td>28.11499</td><td> 790.4526</td><td>70.000000</td><td>1</td><td>1</td><td>16</td><td>       NA</td><td>1</td><td>1</td><td>15</td><td> 2</td><td>1    </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>150.1</th><td>.</td><td>-1</td><td>64.45996</td><td>4155.0863</td><td>       NA</td><td>0</td><td>0</td><td>11</td><td>       NA</td><td>0</td><td>0</td><td>12</td><td> 1</td><td>-21  </td><td> 1</td><td> 1</td></tr>
+    <tr><th scope=row>160</th><td>.</td><td> 1</td><td>33.25120</td><td>1105.6422</td><td> 9.600000</td><td>1</td><td>0</td><td>13</td><td>       NA</td><td>1</td><td>0</td><td>12</td><td> 0</td><td>-2   </td><td> 0</td><td> 0</td></tr>
+    <tr><th scope=row>166</th><td>.</td><td> 1</td><td>52.98563</td><td>2807.4766</td><td>14.285714</td><td>1</td><td>1</td><td>13</td><td>       NA</td><td>1</td><td>1</td><td>12</td><td> 0</td><td>3    </td><td> 0</td><td> 0</td></tr>
+</tbody>
+</table>
+
+<hr />
+<pre><code class="language-R"># the digression above is not important in our case, 
+# as we will simply drop the rows that contain a na cell.
+twins.diff = twins.diff[complete.cases(twins.diff), ]
+</code></pre>
+<pre><code class="language-R">nrow(twins.diff)
+</code></pre>
+<p>76</p>
+<p>18 rows are dropped. Now, we can run the paired t test.</p>
+<pre><code class="language-R"># for each row, determine the lower and the higher wages.
+log.wages.low = with(twins.diff, 
+            ifelse(EDUCL &lt; EDUCH, log(HRWAGEL), log(HRWAGEH)))
+log.wages.high = with(twins.diff,
+            ifelse(EDUCL &lt; EDUCH, log(HRWAGEH), log(HRWAGEL)))
+# combine those values for each row, and obtain a dataframe
+low_high = cbind(log.wages.low, log.wages.high)
+
+head(low_high)
+</code></pre>
+<table class="dataframe">
+<caption>A matrix: 6 × 2 of type dbl</caption>
+<thead>
+    <tr><th scope=col>log.wages.low</th><th scope=col>log.wages.high</th></tr>
+</thead>
+<tbody>
+    <tr><td>2.169054</td><td>2.890372</td></tr>
+    <tr><td>3.555348</td><td>2.032088</td></tr>
+    <tr><td>2.484907</td><td>2.708050</td></tr>
+    <tr><td>2.847812</td><td>2.796061</td></tr>
+    <tr><td>2.748872</td><td>3.218876</td></tr>
+    <tr><td>1.972691</td><td>2.278292</td></tr>
+</tbody>
+</table>
+
+<p>Instead of working with two samples, we will create a new variable: difference between the low and high (log) wages.<br />
+Instead of asking if $\mu_L = \mu_H$, we will ask if their difference $d=\mu_H - \mu_L$ is zero.</p>
+<pre><code class="language-R">diff = low_high[,2]-low_high[,1]
+</code></pre>
+<pre><code class="language-R">hist(diff)
+</code></pre>
+<p><img alt="png" src="../output_146_0.png" /></p>
+<p>Now, we can run the t-test for the paired samples.<br />
+<strong>Summary</strong>
+If you can pair the samples when comparing, then group corresponding individuals from both samples and think of those groups as individuals. And run a one sample t-test for the difference of the values of those individuals.</p>
+<p>In our example, instead of comparing the wages of twin 1's and the wages of twin 2's directly, we're looking at the difference of wages of the twins (if their education level is different). Think of the new sample consisting twins (both twins together), and the random variable as the difference between their wages.</p>
+<pre><code class="language-R"># just add the argument paired=TRUE
+t.test(log.wages.low, log.wages.high, paired=TRUE)
+</code></pre>
+<pre><code>    Paired t-test
+
+data:  log.wages.low and log.wages.high
+t = -4.6197, df = 75, p-value = 1.563e-05
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -0.3918743 -0.1557355
+sample estimates:
+mean of the differences 
+             -0.2738049
+</code></pre>
+<p>p-value is extremely small, hence the null hypothesis $\mu_H = \mu_L$ is to be rejected.</p>
+<pre><code class="language-R">
+</code></pre>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../../chapter_2/quantitative/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 02 - Chapter 2" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              02 - Chapter 2
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["search.suggest", "search.highlight", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3a4b43e5.min.js"></script>
+      
+    
+  </body>
+</html>
