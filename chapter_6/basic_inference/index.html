@@ -1121,6 +1121,9 @@ This test usually is applied to test the effect of a drug or an educational meth
 twins$HRWAGEL = as.numeric(twins$HRWAGEL)
 twins$HRWAGEH = as.numeric(twins$HRWAGEH)
 </code></pre>
+<pre><code>Warning message in eval(expr, envir, enclos):
+“NAs introduced by coercion”
+</code></pre>
 <pre><code class="language-R">twins.diff = subset(twins, EDUCH != EDUCL)
 </code></pre>
 <pre><code class="language-R"># number of rows
@@ -1267,8 +1270,6 @@ mean of the differences
              -0.2738049
 </code></pre>
 <p>p-value is extremely small, hence the null hypothesis $\mu_H = \mu_L$ is to be rejected.</p>
-<pre><code class="language-R">
-</code></pre>
 
               
             </article>
